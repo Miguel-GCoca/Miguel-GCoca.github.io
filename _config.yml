@@ -1,3 +1,43 @@
-theme: jekyll-theme-minimal
-title: Miguel's homepage
-description: Bookmark this to keep an eye on my project updates!
+# Site settings
+title: "Miguel Grisales Coca"
+description: >-
+  Portfolio and projects of Miguel Grisales Coca.
+permalink: ':title/'
+baseurl: ""
+url: "https://miguel-gcoca.github.io"
+
+# Author settings
+author: Miguel Grisales Coca
+author-img: bio-photo.jpg
+about-author: "Robotics and physical AI enthusiast. Passionate about learning."
+social-github: Miguel-GCoca
+social-linkedin: "www.linkedin.com/in/miguel-grisales5675"
+social-email: "MGrisalesCoca@gmail.com"
+
+# Build settings
+markdown: kramdown
+remote_theme: artemsheludko/flexible-jekyll
+
+include:
+  - _pages
+
+plugins:
+  - jekyll-sitemap
+  - jemoji
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: main
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: main
