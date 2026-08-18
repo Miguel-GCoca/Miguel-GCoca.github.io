@@ -5,3 +5,11 @@
   margin: 0;
   padding: 0;
 }
+
+.resume-embed {
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 8.5 / 11;
+  border: none;
+  display: block;
+}
