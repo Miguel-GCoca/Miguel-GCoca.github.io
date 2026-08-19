@@ -13,3 +13,64 @@
   border: none;
   display: block;
 }
+
+/* Wrap an <img> and a <p> in a div with this class to place them side by side.
+   Set the image's size with an inline style, e.g. style="width: 150px;" —
+   height is automatic so the image never gets stretched. */
+.img-text-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5em;
+  margin-bottom: 1em;
+}
+
+.img-text-row img,
+.img-text-row video {
+  height: auto;
+  max-width: 100%;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.img-text-row p {
+  margin: 0;
+}
+
+/* Add alongside img-text-row to put the media on the right instead of the left:
+   <div class="img-text-row img-text-row--reverse" markdown="1"> */
+.img-text-row--reverse {
+  flex-direction: row-reverse;
+}
+
+/* For two images/videos side by side next to text: wrap the pair in a div
+   with this class, then use that div as the media slot inside img-text-row
+   (in place of a single <img>). Works with img-text-row--reverse the same
+   way — the whole pair moves to the right.
+   <div class="img-text-row" markdown="1">
+   <div class="img-pair">
+   <img src="..." style="width: 150px;">
+   <img src="..." style="width: 150px;">
+   </div>
+
+   Text goes here.
+   </div> */
+.img-pair {
+  display: flex;
+  gap: 0.5em;
+  flex-shrink: 0;
+}
+
+/* Light grey callout box for a section-header line inside a project body:
+   <div class="section-header" markdown="1">
+   **Role:** description text.
+   </div> */
+.section-header {
+  background-color: #eee;
+  border-radius: 4px;
+  padding: 0.6em 0.9em;
+  margin: 1.5em 0 0.75em;
+}
+
+.section-header p {
+  margin: 0;
+}

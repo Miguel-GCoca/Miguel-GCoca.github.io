@@ -2,6 +2,8 @@
 title: "Mechatronic Musical Instrument"
 excerpt: "A cello redesigned for minimal size, easy assembly/disassembly, ease of use, and silent operation."
 order: 8
+# img: mechatronic-musical-instrument/mechatronic-musical-instrument.jpg  # add the file to assets/img/projects/mechatronic-musical-instrument/ then uncomment this line
+# img-position: 50% 50%  # e.g. "30% 70%" to nudge proportionally, or "left 20px top 10px" for an exact pixel offset
 ---
 
 **WEAR Lab, University of Central Florida — February 2022**

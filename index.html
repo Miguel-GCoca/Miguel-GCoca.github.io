@@ -5,7 +5,7 @@ layout: main
 {% for project in projects %}
 <article class="post">
   {% if project.img %}
-    <a class="post-thumbnail" style="background-image: url({{ "/assets/img/" | prepend: site.baseurl | append: project.img }})" href="{{ project.url | prepend: site.baseurl }}"></a>
+    <a class="post-thumbnail" style="background-image: url({{ "/assets/img/projects/" | prepend: site.baseurl | append: project.img }}); background-position: {{ project.img-position | default: "50% 50%" }};" href="{{ project.url | prepend: site.baseurl }}"></a>
   {% endif %}
   <div class="post-content">
     <h2 class="post-title"><a href="{{ project.url | prepend: site.baseurl }}">{{ project.title }}</a></h2>

@@ -2,6 +2,8 @@
 title: "Dynamic Swept Wing"
 excerpt: "Morphing airfoil for submersed flow analysis with user-controlled telescopic span and variable sweep angle."
 order: 3
+# img: dynamic-swept-wing/dynamic-swept-wing.jpg  # add the file to assets/img/projects/dynamic-swept-wing/ then uncomment this line
+# img-position: 50% 50%  # e.g. "30% 70%" to nudge proportionally, or "left 20px top 10px" for an exact pixel offset
 ---
 
 **WEAR Lab, University of Central Florida — April 2024**
