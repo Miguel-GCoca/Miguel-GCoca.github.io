@@ -166,3 +166,68 @@
 .section-header p {
   margin: 0;
 }
+
+/* - - - - - - - - - - Mobile hardening - - - - - - - - - - */
+
+/* Nothing inside the article column may be wider than the column itself.
+   The theme already sets `img { max-width: 100% }` globally, but <video>
+   and <iframe> get no such rule — so a clip with an inline
+   `style="width: 500px"` could push the page wider than a phone screen.
+   When any element overflows like that, iOS Safari "shrink-to-fits" the
+   whole page (it zooms out until the widest element fits), which is what
+   makes the sidebar and text look tiny and squeezed into a narrow column.
+   Capping every media element here removes that possibility at the source. */
+.content-box img,
+.content-box video {
+  max-width: 100%;
+  height: auto;
+}
+
+.content-box iframe {
+  max-width: 100%;
+}
+
+/* Belt-and-braces on the block-vs-flex override above: the theme
+   re-declares `.content-box { display: flex }` inside its own
+   `@media (max-width: 768px)` block. That has the same specificity as
+   `.content-box--article`, so ours only wins because custom.css is linked
+   after main.css — a fragile thing to depend on. Doubling up the class
+   selector raises specificity so the override wins outright. If this ever
+   loses, article pages fall back to flex layout and every paragraph
+   shrink-wraps to its own text width while wide media stretches past it. */
+.content-box.content-box--article {
+  display: block;
+}
+
+/* On a phone, stack everything vertically at full column width. The
+   container query above already unfloats media, but the media keeps its
+   authored desktop size (e.g. 300px) inside a ~370px column, which reads as
+   a stack of undersized thumbnails. Here we also collapse .img-pair from a
+   row to a column and let every image/video fill the column.
+   `!important` is required because the sizes are set as *inline* styles in
+   the project markdown (`style="width: 300px;"`), and inline styles beat
+   any stylesheet rule without it. Only `width` is overridden — `height`
+   stays `auto` (set above), so aspect ratios are preserved. */
+@media only screen and (max-width: 768px) {
+  .img-text-row > img,
+  .img-text-row > video,
+  .img-text-row > .img-pair,
+  .img-text-row > .img-stack {
+    float: none;
+    margin: 0 0 0.75em 0;
+  }
+
+  .img-pair {
+    flex-direction: column;
+  }
+
+  .img-pair > img,
+  .img-pair > video,
+  .img-pair > .img-stack,
+  .img-stack > img,
+  .img-stack > video,
+  .img-text-row > img,
+  .img-text-row > video {
+    width: 100% !important;
+  }
+}
