@@ -48,8 +48,23 @@ silently, and keep edits scoped to what was asked.
   - `.resume-embed` — keeps the embedded resume PDF at its true (8.5:11)
     aspect ratio instead of a fixed pixel height, so it doesn't squish on
     mobile.
-  - `.img-text-row` — flex row for "media next to text" layout inside a
-    project body. Usage:
+  - `.img-text-row` — floats media (an `<img>`/`<video>`, or an `.img-pair`/
+    `.img-stack` group) to the left of the following text inside a project
+    body; text wraps in the space beside it and drops to full width below
+    once it runs past the media's bottom edge. All media is left-aligned —
+    there is no right-aligned variant. Below a 900px *content-column* width
+    (a CSS container query on `.content-box`, not a viewport media query —
+    this reacts to the actual space available next to the sidebar, not the
+    full page width), media unfloats and stacks above the text instead. That
+    threshold is sized off the widest image on the site (500px) plus its
+    margin plus a ~350px minimum text-column width, so no row's text column
+    gets narrower than that while floating. Note: `@container` measures the
+    *content box* (padding excluded) — `.content-box`'s own 280px of padding
+    (260px reserved for the sidebar + 20px) caps its content width at
+    `1250px wrapper max − 280px = 970px` even at full width, so this
+    threshold must stay under ~970px or floating becomes unreachable on any
+    screen size —
+    raise/lower it in `assets/css/custom.css` to change that minimum. Usage:
     ```html
     <div class="img-text-row" markdown="1">
     <img src="/assets/img/projects/<slug>/<file>.jpg" alt="..." style="width: 150px;">
@@ -61,9 +76,7 @@ silently, and keep edits scoped to what was asked.
     `style="width: ...px"` (height is automatic — never set both, or the
     aspect ratio breaks). `markdown="1"` on the wrapping div is required for
     any Markdown syntax inside it (bold, links, `<br>`) to actually render
-    instead of showing as literal text. Add a second class,
-    `img-text-row--reverse`, to the div to put the media on the right and
-    text on the left instead (flips `flex-direction` to `row-reverse`).
+    instead of showing as literal text.
   - `.img-pair` — pairs with `.img-text-row` to show two images/videos side
     by side next to text (instead of just one). Wrap the pair in a div with
     this class and use that div as the media slot:
@@ -77,8 +90,9 @@ silently, and keep edits scoped to what was asked.
     Text goes here.
     </div>
     ```
-    Works with `img-text-row--reverse` the same way — the whole pair moves
-    to the right.
+  - `.img-stack` — pairs with `.img-text-row` (or nests inside `.img-pair`)
+    to stack two images/videos vertically instead of side by side. Same
+    wrapping pattern as `.img-pair`, just stacked in a column.
 
 ## Local dev workflow
 

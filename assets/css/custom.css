@@ -14,14 +14,70 @@
   display: block;
 }
 
-/* Wrap an <img> and a <p> in a div with this class to place them side by side.
-   Set the image's size with an inline style, e.g. style="width: 150px;" —
-   height is automatic so the image never gets stretched. */
+/* The theme caps .wrapper at 1250px and never centers it (no margin: 0
+   auto), so on any window wider than that, the extra space just sits
+   unused on the right — right-floated media in .img-text-row rows ends up
+   hugging that 1250px cap instead of the browser's actual right edge,
+   which reads as a permanent empty column / off-center layout on wide
+   screens. Let the content column use the full width that's actually
+   there. */
+.wrapper {
+  max-width: none;
+}
+
+/* Lets .img-text-row below query its own rendered width (via @container)
+   instead of the full page viewport (via @media). The content column isn't
+   the same as the viewport — the sidebar eats ~260px off the left — so a
+   container query reacts to the space actually available to the row itself,
+   and keeps working correctly even if the sidebar width or theme layout
+   ever changes. .img-text-row is a direct child of .content-box, so this is
+   set on .content-box (an element can't query its own size). */
+.content-box {
+  container-type: inline-size;
+}
+
+/* The theme's .content-box is `display: flex; flex-wrap: wrap` — built for
+   the homepage, where its direct children are the project-card <article>
+   elements that are meant to size themselves and wrap into a grid. Our
+   layout (_layouts/main.html) reuses the same wrapper on every other page,
+   but there the direct children are ordinary body content (paragraphs,
+   .img-text-row, .section-header). As flex items, those shrink-wrap to
+   their own content's preferred width instead of stretching to fill the
+   column — most paragraphs are long enough to hit the column width anyway
+   and look fine by coincidence, but a block with a float next to a short
+   list (like an .img-text-row) can end up sized much narrower than the
+   column, with blank space to its right and its text wrapping into a thin
+   sliver. main.html tags every non-homepage page with `content-box--article`
+   so those pages get normal block stacking instead. */
+.content-box--article {
+  display: block;
+}
+
+/* Wrap media (an <img>/<video>, or an .img-pair/.img-stack group) and text
+   in a div with this class to place them side by side. The media floats so
+   text wraps in the space beside it, then drops to full width below once it
+   runs past the media's bottom edge — instead of staying pinned in a narrow
+   column for the text's whole height. Set the media's size with an inline
+   style, e.g. style="width: 150px;" — height is automatic so it never gets
+   stretched. */
 .img-text-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.5em;
   margin-bottom: 1em;
+}
+
+/* Clearfix: contain the float's height so margin-bottom above works, and so
+   later elements don't wrap around this row's media too. */
+.img-text-row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.img-text-row > img,
+.img-text-row > video,
+.img-text-row > .img-pair,
+.img-text-row > .img-stack {
+  float: left;
+  margin: 0 1.5em 0.5em 0;
 }
 
 .img-text-row img,
@@ -36,16 +92,36 @@
   margin: 0;
 }
 
-/* Add alongside img-text-row to put the media on the right instead of the left:
-   <div class="img-text-row img-text-row--reverse" markdown="1"> */
-.img-text-row--reverse {
-  flex-direction: row-reverse;
+/* When the content column itself gets too narrow to hold the media and a
+   readable text column side by side, stack media above text instead of
+   floating beside it. */
+@container (max-width: 900px) {
+  .img-text-row > img,
+  .img-text-row > video,
+  .img-text-row > .img-pair,
+  .img-text-row > .img-stack {
+    float: none;
+    margin: 0 0 0.75em 0;
+  }
+}
+
+/* Fallback for browsers without container query support: approximate the
+   same breakpoint off the full page viewport instead. */
+@supports not (container-type: inline-size) {
+  @media (max-width: 900px) {
+    .img-text-row > img,
+    .img-text-row > video,
+    .img-text-row > .img-pair,
+    .img-text-row > .img-stack {
+      float: none;
+      margin: 0 0 0.75em 0;
+    }
+  }
 }
 
 /* For two images/videos side by side next to text: wrap the pair in a div
    with this class, then use that div as the media slot inside img-text-row
-   (in place of a single <img>). Works with img-text-row--reverse the same
-   way — the whole pair moves to the right.
+   (in place of a single <img>).
    <div class="img-text-row" markdown="1">
    <div class="img-pair">
    <img src="..." style="width: 150px;">
@@ -56,6 +132,22 @@
    </div> */
 .img-pair {
   display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  flex-shrink: 0;
+}
+
+/* For two images/videos stacked vertically instead of side by side: wrap
+   them in a div with this class. Use standalone as the media slot inside
+   img-text-row, or nest inside .img-pair alongside other media to stack
+   just part of the group.
+   <div class="img-stack">
+   <img src="..." style="width: 150px;">
+   <img src="..." style="width: 150px;">
+   </div> */
+.img-stack {
+  display: flex;
+  flex-direction: column;
   gap: 0.5em;
   flex-shrink: 0;
 }
