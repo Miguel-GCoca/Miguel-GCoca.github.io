@@ -231,3 +231,69 @@
     width: 100% !important;
   }
 }
+
+/* - - - - - - - - - - Under-construction banner - - - - - - - - - - */
+
+/* Shown near the top of every page except the ones listed in
+   _layouts/main.html's exclusion check. On the homepage, .content-box is
+   still the theme's flex/wrap grid (it holds the project <article> cards),
+   so `flex: 0 0 100%` forces the banner onto its own full-width row instead
+   of being sized like a grid item and sitting beside the first card. */
+.construction-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  width: 100%;
+  flex: 0 0 100%;
+  box-sizing: border-box;
+  background-color: #fdf3d8;
+  border: 1px solid #e8c468;
+  border-radius: 4px;
+  color: #7a5900;
+  padding: 0.7em 1em;
+  margin-bottom: 1.25em;
+  font-size: 14px;
+}
+
+.construction-banner i {
+  color: #b8860b;
+  font-size: 15px;
+}
+
+/* - - - - - - - - - - Article typography - - - - - - - - - - */
+
+/* The theme has no styling at all for h2/ul on article pages (about.md,
+   resume.md, project bodies that use markdown headings) — they render as
+   bare browser defaults, which reads flat next to the rest of the site's
+   PT Serif / navy accent styling. Give headings the same treatment as
+   project-card titles (.post-title a, main.css) for visual consistency. */
+.content-box--article h2 {
+  font-family: 'PT Serif', serif;
+  color: #263959;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 1.75em 0 0.75em;
+  padding-bottom: 0.35em;
+  border-bottom: 2px solid #eee;
+}
+
+.content-box--article h2:first-child {
+  margin-top: 0;
+}
+
+.content-box--article ul {
+  margin: 0 0 1em;
+  padding-left: 1.25em;
+}
+
+.content-box--article li {
+  margin-bottom: 0.3em;
+}
+
+/* A bold "category" line (e.g. **Digital Tools**) immediately followed by
+   a bullet list reads as a compact sub-heading for that list — tighten the
+   gap between the two so they read as a pair instead of two unrelated
+   blocks. */
+.content-box--article p:has(+ ul) {
+  margin-bottom: 0.4em;
+}

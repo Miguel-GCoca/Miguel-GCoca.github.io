@@ -15,9 +15,19 @@ silently, and keep edits scoped to what was asked.
   environment) + `remote_theme: artemsheludko/flexible-jekyll`.
 - The theme is pulled in remotely (not vendored into the repo). We only keep
   **local override copies** of the specific theme files we've customized:
-  - `_layouts/main.html` — sidebar (avatar, bio, nav, contact icons, footer)
+  - `_layouts/main.html` — sidebar (avatar, bio, nav, contact icons, footer).
+    Also renders `_includes/construction-banner.html` near the top of
+    `.content-box` on every page except the ones named in its `{% unless %}`
+    exclusion list (currently `/resume/` and the Bring ROAR to Life project,
+    since those are the only pages considered finished as of this writing).
+    Update that list as pages get finished; remove the include entirely once
+    nothing is left in progress. The banner is `flex: 0 0 100%` in
+    `custom.css` specifically so it forces its own row above the homepage's
+    flex/wrap project-card grid instead of sizing like a card.
   - `_includes/head.html` — `<head>`, meta tags, favicon (points at bio-photo.jpg
-    instead of the theme's default icon)
+    instead of the theme's default icon). Viewport meta is
+    `width=device-width, initial-scale=1` — deliberately no `maximum-scale`,
+    since that previously blocked pinch-zoom on iOS.
   - `index.html` — homepage template; loops over the `projects` collection
     instead of the theme's default blog-post loop
   Any other theme file (e.g. `_layouts/default.html`) is still coming straight
@@ -64,7 +74,23 @@ silently, and keep edits scoped to what was asked.
     `1250px wrapper max − 280px = 970px` even at full width, so this
     threshold must stay under ~970px or floating becomes unreachable on any
     screen size —
-    raise/lower it in `assets/css/custom.css` to change that minimum. Usage:
+    raise/lower it in `assets/css/custom.css` to change that minimum. Below
+    a 768px *viewport* width (an ordinary `@media` query this time, since at
+    that point we're targeting actual phones rather than reacting to
+    sidebar layout) media additionally drops to full column width — media
+    author sizes like `style="width: 500px;"` are meant as desktop/tablet
+    caps, not phone sizes, so this stage forces `width: 100% !important` on
+    every image/video inside `.img-text-row`/`.img-pair`/`.img-stack` (the
+    `!important` is required to beat those inline styles) and stacks
+    `.img-pair` into a column instead of a row. `height` stays `auto`
+    throughout so aspect ratios never break. This is also where
+    `.content-box.content-box--article { display: block }` is
+    re-asserted at doubled specificity, since the theme's own `main.css`
+    re-declares `.content-box { display: flex }` inside its identical
+    `@media (max-width: 768px)` block — without the specificity bump,
+    article pages would fall back to flex layout on phones and every
+    paragraph would shrink-wrap to its own text width instead of filling
+    the column. Usage:
     ```html
     <div class="img-text-row" markdown="1">
     <img src="/assets/img/projects/<slug>/<file>.jpg" alt="..." style="width: 150px;">
@@ -93,6 +119,25 @@ silently, and keep edits scoped to what was asked.
   - `.img-stack` — pairs with `.img-text-row` (or nests inside `.img-pair`)
     to stack two images/videos vertically instead of side by side. Same
     wrapping pattern as `.img-pair`, just stacked in a column.
+  - `.content-box img/video/iframe { max-width: 100% }` — belt-and-braces
+    mobile guard, separate from the breakpoint logic above. The theme
+    already caps `<img>` at 100% width globally, but not `<video>` or
+    `<iframe>`, so a clip authored at `style="width: 500px;"` could overflow
+    a phone viewport outright; iOS Safari responds to that kind of overflow
+    by shrink-to-fitting (zooming out) the *whole page*, which reads as
+    "everything tiny and squished" rather than one broken element. This
+    rule removes that failure mode regardless of where the media sits on
+    the page.
+  - `.construction-banner` — the amber notice box rendered by
+    `_includes/construction-banner.html` (see `_layouts/main.html` above).
+    Not meant to be used directly in page/project markdown.
+  - `.content-box--article h2` / `ul` / `li` — gives Markdown `##` headings
+    and bullet lists a styled look (PT Serif, navy accent, bottom-rule under
+    h2) on article-type pages (`about.md`, `resume.md`, project bodies that
+    use headings) — the theme has no styling at all for these, so without
+    this they render as bare browser defaults. Project bodies mostly use
+    `.section-header` instead of `##` headings, so this mainly affects
+    `about.md` today.
 
 ## Local dev workflow
 

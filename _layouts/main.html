@@ -40,5 +40,13 @@ layout: default
   </footer> <!-- End Footer -->
 </aside> <!-- End Sidebar -->
 <div class="content-box clearfix{% unless page.url == '/' %} content-box--article{% endunless %}">
+  {% comment %}
+    Site-wide "under construction" notice — everywhere except the pages
+    that are actually finished. Update this exclusion list as pages get
+    finished; remove the include entirely once nothing is left in progress.
+  {% endcomment %}
+  {% unless page.url == '/projects/bring-roar-to-life/' or page.url == '/resume/' %}
+    {% include construction-banner.html %}
+  {% endunless %}
   {{ content }}
 </div>
