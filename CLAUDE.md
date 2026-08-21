@@ -17,8 +17,8 @@ silently, and keep edits scoped to what was asked.
   **local override copies** of the specific theme files we've customized:
   - `_layouts/main.html` — sidebar (avatar, bio, nav, contact icons, footer).
     Also renders `_includes/construction-banner.html` near the top of
-    `.content-box` on every page except the ones named in its `{% unless %}`
-    exclusion list (currently `/resume/` and the Bring ROAR to Life project,
+    `.content-box` on every page except the ones named in its Liquid
+    `unless` exclusion list (currently `/resume/` and the Bring ROAR to Life project,
     since those are the only pages considered finished as of this writing).
     Update that list as pages get finished; remove the include entirely once
     nothing is left in progress. The banner is `flex: 0 0 100%` in
