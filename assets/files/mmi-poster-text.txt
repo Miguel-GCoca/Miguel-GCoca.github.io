@@ -1,0 +1,65 @@
+Background and Motivation:
+• Low portability: Some musical instruments are 
+heavy and bulky such as cellos, making them 
+inconvenient to transport from one place to 
+another.
+• Time- and location- constraints: Playing the cello 
+can be disrupting, particularly during late hours or 
+in a shared space.
+• Limited learning and practicing effectiveness: 
+There is no feedback provided from musical 
+instruments to quantitatively assess the musical 
+performance
+
+Objectives:
+1. Develop an electronic portable cello that preserves 
+the integrity of a regular cello and provides a cello 
+like experience.
+2. Develop a quieter cello to allow practicing at night 
+and shared places without jeopardizing the music 
+quality.
+3. Create a mobile app with a musical instrument 
+digital interface (MIDI) to access the MMI 
+wirelessly for tuning, synthesizing, and recording 
+of music being played
+4. Conduct experimental evaluations on the 
+implemented functions and assess the practicality 
+and believability.
+
+Research Questions:
+1. Which mechanical design can effectively break 
+down a regular cello to a portable size while keeping 
+the believability of the instrument once assembled 
+and played?
+2. Can the cello be made quieter for surrounding but 
+the user can still enjoy the music through a 
+headset?
+3. What type of sensors can capture the user inputs 
+(e.g., bowing) with the desired accuracy and 
+resolution?
+4. How should the measured electric signals from the 
+sensors be transmitted, processed, and synthesized?
+5. How to provide performance feedback to improve 
+the individual’s practice session?
+
+Aims and Methods:
+• Aim 1: Compact, quieter, portable mechanical design of a musical instrument
+➢ Method: Identify the most vital and necessary components of the cello; identify 
+the fixed measurements for a 4/4 (Full) size acoustic cello; break down the vital 
+components of the cello to create a compact version that can withstand bending 
+force exerted by the strings on the cello’s body [1] and reduce the overall size of 
+the cello to increase ease in portability; eliminate the voice box of the cello and 
+replace the strings with silent strings to reduce loudness.
+• Aim 2: Sensor selection and instrumentation for digitizing user inputs
+➢ Method: Identify sensors and instrumentation methods to digitize the user inputs 
+in terms of vibration of the strings; Take user inputs, analyze them, and provide 
+feedback on user's playing for learning purposes.
+• Aim 3: Fabrication, integration of mechanical and electrical components, and 
+programming an on-board computer
+➢ Method: Use a single board computer and algorithms for sensor data 
+acquisition/processing/conversion to MIDI, which then can wirelessly transmit the 
+MIDI data to a mobile device via Bluetooth
+• Aim 4: Develop a mobile app for user-device interface and control
+➢ Method: Create a user interface (iOS or Android app) to receive the MIDI data from 
+the device, convert it to respective sound, and provide functionalities for real-time 
+playing in headphones and for performance feedback capability

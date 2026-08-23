@@ -1,0 +1,67 @@
+Background and Motivation:
+• Limited research : Most research focuses on 
+enhancing long-term human activities such as 
+walking and running; However, very limited 
+research is out there on short-term fast activities 
+such as jumping [1]. 
+• Low effectiveness: Exoskeleton suits are developed 
+to improve vertical jumping. Most active 
+exoskeleton are typically heavy with not much 
+improvement on the vertical jump height [2, 3]. On 
+the other hand, passive exoskeletons are lighter 
+and incorporate springs to store and release energy 
+during the dumping process. However, they only 
+show improvement at deeper squat position [1].
+• Upper lower-body cooperation: It is known that 
+arm swings improve vertical jumping height, yet no 
+exoskeleton that incorporates upper-body 
+extremities has been developed
+
+Objectives:
+1. Develop a semi-active exoskeleton that:
+a. Is relatively light compared to other active
+exoskeletal suits.
+b. Has a mechanism placed on the hip and
+connected to the back of the heel to perform
+faster ankle plantarflexion motion.
+c. uses upper-body extremities (arms) to
+provide extra energy needed to help lowerbody extremities achieve higher vertical
+jump.
+2. Conduct experiments to determine:
+a. Efficacy of the suit to enhance vertical
+jumping height
+
+Research Questions:
+1. Can arms be used to help legs perform higher 
+vertical jumps?
+2. Can cables be used to transfer upper-body energy 
+to lower-body extremities?
+3. Can the deigned suit be relatively light compared 
+to other active exoskeleton suits?.
+4. Is the suit able to allow the user to move freely 
+when the mechanism is not active?
+
+Aims and Methods:
+• Aim 1: Design an exoskeletal suit that allows the user to pull the cables connected to 
+heel (s) to rotate the ankle joint(s) in the plantarflexion direction
+➢ Method: Use a belt to hold a gearbox and two recoil devices, one on each side of 
+the gearbox. use an input cable that connects a handle to one recoil device and an 
+output cable that connects the second recoiled device to the back of the heel. The 
+user would pull the handles to activate the mechanism and rotate the ankle joint 
+as the jumping process starts from squatting position until toe takeoff phase.
+• Aim 2: Design a lightweight exoskeletal suit
+➢ Method: Optimize the smallest gearbox and recoil device needed to convert the 
+cable length pulled by the user’s hands to the cable length that matches the range 
+of motion (ROM) of the ankle joint. 
+• Aim 3: Optimize cable routing 
+➢ Method: Identify the best route for the cable connecting the heel to the recoil 
+device to minimize energy loss and to rotate the ankle joint in the plantarflexion 
+direction.
+• Aim 4: Develop a gearbox capable to achieve 12 to 1 conversion ratio.
+➢ Method: Design a plantar gearbox due to their small size to capability advantage 
+over other types of gearboxes. 
+• Aim 5: Allow the user to move freely when the mechanism is disengaged and to 
+maintain cable-tension at all times.
+➢ Method: use a recoil device for each cable to maintain cable tension. The recoil 
+device connected to the input cable is also used to engage and disengage upper 
+and lower-body cooperation

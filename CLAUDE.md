@@ -17,13 +17,16 @@ silently, and keep edits scoped to what was asked.
   **local override copies** of the specific theme files we've customized:
   - `_layouts/main.html` — sidebar (avatar, bio, nav, contact icons, footer).
     Also renders `_includes/construction-banner.html` near the top of
-    `.content-box` on every page except the ones named in its Liquid
-    `unless` exclusion list (currently `/resume/` and the Bring ROAR to Life project,
-    since those are the only pages considered finished as of this writing).
-    Update that list as pages get finished; remove the include entirely once
-    nothing is left in progress. The banner is `flex: 0 0 100%` in
-    `custom.css` specifically so it forces its own row above the homepage's
-    flex/wrap project-card grid instead of sizing like a card.
+    `.content-box`, but only on individual project pages (`page.collection ==
+    "projects"`) — not the homepage, about, resume, or posters as a whole.
+    `index.html` separately renders the same include inside each project
+    card's `.post-content`, under the excerpt. Both check the finished list
+    against the project's slug, so a project's status only needs to change
+    in one place. Shown on every project except the slugs listed in
+    `_data/finished_projects.yml` (currently `bring-roar-to-life`,
+    `anky-jr`, `airfoil-inspired-car`). Update that file as projects get
+    finished; remove both includes entirely once nothing is left in
+    progress.
   - `_includes/head.html` — `<head>`, meta tags, favicon (points at bio-photo.jpg
     instead of the theme's default icon). Viewport meta is
     `width=device-width, initial-scale=1` — deliberately no `maximum-scale`,

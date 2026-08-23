@@ -16,6 +16,7 @@ layout: default
         <li><a href="{{ site.baseurl }}/about/">About</a></li>
         <li><a href="{{ site.baseurl }}/">Projects</a></li>
         <li><a href="{{ site.baseurl }}/resume/">Resume</a></li>
+        <li><a href="{{ site.baseurl }}/posters/">Posters</a></li>
       </ul>
     </nav>
   </header> <!-- End Header -->
@@ -32,6 +33,9 @@ layout: default
         {% if site.social-email %}
           <li class="email"><a href="mailto:{{site.social-email}}"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
         {% endif %}
+        {% if site.social-phone %}
+          <li class="phone"><a href="tel:+1{{site.social-phone}}"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
+        {% endif %}
       </ul>
     </section> <!-- End Section Contact -->
     <div class="copyright">
@@ -41,12 +45,15 @@ layout: default
 </aside> <!-- End Sidebar -->
 <div class="content-box clearfix{% unless page.url == '/' %} content-box--article{% endunless %}">
   {% comment %}
-    Site-wide "under construction" notice — everywhere except the pages
-    that are actually finished. Update this exclusion list as pages get
+    "Under construction" notice on individual project pages only — not the
+    homepage, about, resume, or posters. Shown on every project except the
+    ones actually finished. Update this exclusion list as projects get
     finished; remove the include entirely once nothing is left in progress.
   {% endcomment %}
-  {% unless page.url == '/projects/bring-roar-to-life/' or page.url == '/resume/' %}
-    {% include construction-banner.html %}
-  {% endunless %}
+  {% if page.collection == "projects" %}
+    {% unless site.data.finished_projects contains page.slug %}
+      {% include construction-banner.html %}
+    {% endunless %}
+  {% endif %}
   {{ content }}
 </div>

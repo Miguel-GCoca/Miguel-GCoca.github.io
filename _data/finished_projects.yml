@@ -1,0 +1,11 @@
+# Project slugs (front matter filename, no extension) considered finished —
+# these are the only ones that DON'T get the under-construction banner.
+# Referenced from _layouts/main.html (project page banner) and index.html
+# (homepage card banner). Update as projects get finished.
+- bring-roar-to-life
+- anky-jr
+- airfoil-inspired-car
+- ankle-perturbation-system
+- human-augmentation-exosuit
+- mechatronic-musical-instrument
+- multimodal-sensing-system

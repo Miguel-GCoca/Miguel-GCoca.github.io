@@ -1,0 +1,69 @@
+background and motivation:
+• Existing wearable biomechanics and 
+physiologic measurement equipment 
+are standalone systems with 
+proprietary hardware and software
+• Difficult to integrate and instrument 
+multiple sensor systems due to 
+individual data acquisition modules and 
+different communication protocols 
+used, making it hard to use them 
+simultaneously for synchronous 
+measurement
+• Limited portability and wearability
+reducing their usage for extended 
+periods of time in outdoor 
+environments
+• Sensor fusion for enhanced 
+biomechanics assessment is 
+challenged due to the abovementioned issues.
+• Existing systems serve as great tools for 
+offline analysis but lacking real time 
+process and analysis capabilities
+
+Objectives:
+1.Investigate a multimodal wearable 
+sensor system for real-time monitoring 
+and data acquisition of various 
+biomechanics, physiologic and 
+ambience parameters
+2.Implement a custom smartphone app 
+with real-time data processing and 
+analysis capabilities to provide 
+important measures synchronously
+
+Aims and Methods:
+Aim 1: Identify key biomechanics, physiological and ambient parameters 
+essential for human and ambient monitoring
+➢ Method 1: Sensor selection and configuration for each type of 
+measurements
+Aim 2: Single and multi module fabrication and integration
+➢ Method 2a: Embed sensors, a microcontroller and wireless modules on a 
+custom PCB and integrate within a wearable cuff for data transmission to 
+an embedded device
+➢ Method 2b: Connect multiple modules with a centralized embedded 
+device via Bluetooth or Wi-Fi 
+Aim 3: On-board data collection and data pre-processing
+➢ Method 3a: Develop a custom-built software in an embedded device for 
+data visualization and processing
+➢ Method 3b: Develop a smartphone app that collects, processes and 
+visualizes data collected from an embedded device
+Aim 4: Real-time Analysis leveraging statistical machine learning algorithms
+➢ Method 4a: Implement custom-built statistical models to perform various 
+assessments
+Aim 5: Validate the usability, reliability and accuracy of the developed system
+➢ Method 5a: Perform in vivo human subject data collection
+
+Significance and broader impact:
+• A fully integrated and validated sensor 
+system with real-time 
+processing/analysis capability for use in 
+outdoor unconstrained environment 
+and dynamic movements
+• A cloud-based service that stores 
+processed patient data accessible by 
+healthcare providers and next of kin
+• Enhancing usability and wearability of 
+wearable sensors and expand 
+measurement capabilities and research 
+feasibilities

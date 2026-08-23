@@ -1,0 +1,58 @@
+aims and methods:
+Aim 1: Design and fabrication of a balance perturbation system to induce
+slip/trip-like perturbations during treadmill walking
+➢ Method: Implement a bump-emulation system (i.e., bump’e,m) onto a
+treadmill, in conjunction to a truss with safety harness, to simulate gait
+perturbation during walking and record data via force sensor and IMU.
+Aim 2: Developing a pre-impact fall detection algorithm to detect loss of
+balance after unexpected slip/trip-like perturbations using wearable sensors
+(IMU & pressure insoles)
+➢ Method: Selection of fall indicator parameters, identifying number of
+sensors and optimal sensor placement position, selection of classifier
+method and validation
+Aim 3: Assisting/augmenting balance recovery response to restore
+gait/postural stability after pre-impact fall detection using a lower limb hybrid
+FES-exoskeleton system
+➢ Method: Design and fabrication of the wearable robotic device and
+developing a hybrid control algorithm combining feedback control for
+robotic actuator and feedforward control for FES.
+
+Background and motivation:
+• In the U.S, more than 1 out of 3 older
+adults aged ≥ 65 years fall each year [1].
+• Successful balance recovery at the onset
+of a fall requires quick & strong lower limb
+reflex responses, involving high rate of
+torque development (RTD) [2].
+• Age-related changes in muscle contractile
+properties result in a decline in RTD during
+fast voluntary contractions.
+• This research aims to assist lower limb
+balance recovery response in older adults
+at the onset of a fall, by simultaneously
+providing assistive torque at joint level and
+Functional Electrical Stimulation (FES) at
+muscular level.
+Pre-impact Fall Detection and Balance Recovery Assistance using Lower Limb 
+Hybrid FES-Exoskeleton
+Renoa Choudhury, Nicolette Fournelis, Miguel Grisales Coca, Mark Aldritz Dela Virgen, Joon-Hyuk Park
+Department of Mechanical and Aerospace Engineering, UCF
+
+Objectives:
+1. Develop a lower limb hybrid FESexoskeleton to assist balance recovery at
+fall onset- integrating FES with robotic
+actuators
+2. Evaluate the efficacy of the proposed
+system in assisting the user to recover
+balance against unexpected slip/trip-like
+perturbations in controlled environment
+
+significance and borader impact:
+• Successful implementation will result in
+reducing fall related injuries & deaths,
+enhancing healthy longevity, and improving
+quality of life among elderly
+• Once validated, it may reduce financial burden
+of health care sector by minimizing the
+medical and rehabilitation expenditure
+associated with fall

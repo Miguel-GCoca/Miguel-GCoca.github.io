@@ -14,6 +14,19 @@
   display: block;
 }
 
+/* Same idea as .resume-embed, but for landscape 11x8.5 poster PDFs instead
+   of the portrait 8.5x11 resume — a portrait aspect-ratio box around a
+   landscape PDF leaves the viewer's own gray letterboxing below the page
+   and empty space to the side. max-width is wider than .resume-embed's
+   since posters are meant to be read at a larger size. */
+.poster-embed {
+  width: 100%;
+  max-width: 1100px;
+  aspect-ratio: 11 / 8.5;
+  border: none;
+  display: block;
+}
+
 /* The theme caps .wrapper at 1250px and never centers it (no margin: 0
    auto), so on any window wider than that, the extra space just sits
    unused on the right — right-floated media in .img-text-row rows ends up
@@ -80,6 +93,16 @@
   margin: 0 1.5em 0.5em 0;
 }
 
+/* Kramdown wraps a bare <img> (one not already inside .img-pair/.img-stack)
+   in its own <p>, unlike <video> which it leaves alone — so a media-only
+   paragraph needs the same float treatment as the bare tags above, or the
+   image renders full-width with the text stacked below it instead of
+   beside it. */
+.img-text-row > p:has(> img:only-child) {
+  float: left;
+  margin: 0 1.5em 0.5em 0;
+}
+
 .img-text-row img,
 .img-text-row video {
   height: auto;
@@ -99,7 +122,8 @@
   .img-text-row > img,
   .img-text-row > video,
   .img-text-row > .img-pair,
-  .img-text-row > .img-stack {
+  .img-text-row > .img-stack,
+  .img-text-row > p:has(> img:only-child) {
     float: none;
     margin: 0 0 0.75em 0;
   }
@@ -112,7 +136,8 @@
     .img-text-row > img,
     .img-text-row > video,
     .img-text-row > .img-pair,
-    .img-text-row > .img-stack {
+    .img-text-row > .img-stack,
+    .img-text-row > p:has(> img:only-child) {
       float: none;
       margin: 0 0 0.75em 0;
     }
@@ -167,6 +192,46 @@
   margin: 0;
 }
 
+/* Two-column layout for pages whose content is a set of self-contained
+   sections (e.g. about.md's Skills/Education/Languages next to
+   Publications) rather than one continuous narrative — lets those
+   sections sit side by side instead of stretching across the full
+   content column and leaving the right side mostly empty. Wrap each
+   column's sections in its own inner div (with markdown="1" so kramdown
+   still processes the Markdown inside it):
+   <div class="two-col-grid" markdown="1">
+   <div markdown="1">
+   ## Section A
+   </div>
+   <div markdown="1">
+   ## Section B
+   </div>
+   </div>
+   Collapses to a single column at the same container width where
+   .img-text-row unfloats its media, so it stacks before the content
+   column gets too narrow to read two side by side. */
+.two-col-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 3em;
+}
+
+@container (max-width: 900px) {
+  .two-col-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+@supports not (container-type: inline-size) {
+  @media (max-width: 900px) {
+    .two-col-grid {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
+}
+
 /* - - - - - - - - - - Mobile hardening - - - - - - - - - - */
 
 /* Nothing inside the article column may be wider than the column itself.
@@ -212,7 +277,8 @@
   .img-text-row > img,
   .img-text-row > video,
   .img-text-row > .img-pair,
-  .img-text-row > .img-stack {
+  .img-text-row > .img-stack,
+  .img-text-row > p:has(> img:only-child) {
     float: none;
     margin: 0 0 0.75em 0;
   }
@@ -234,17 +300,13 @@
 
 /* - - - - - - - - - - Under-construction banner - - - - - - - - - - */
 
-/* Shown near the top of every page except the ones listed in
-   _layouts/main.html's exclusion check. On the homepage, .content-box is
-   still the theme's flex/wrap grid (it holds the project <article> cards),
-   so `flex: 0 0 100%` forces the banner onto its own full-width row instead
-   of being sized like a grid item and sitting beside the first card. */
+/* Shown near the top of individual project pages except the ones listed in
+   _layouts/main.html's finished_projects list. */
 .construction-banner {
   display: flex;
   align-items: center;
   gap: 0.6em;
   width: 100%;
-  flex: 0 0 100%;
   box-sizing: border-box;
   background-color: #fdf3d8;
   border: 1px solid #e8c468;
