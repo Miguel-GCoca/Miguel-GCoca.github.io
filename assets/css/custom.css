@@ -4,6 +4,39 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  text-align: center;
+}
+
+.site-nav a {
+  font-size: 18px;
+}
+
+/* Widen the sidebar banner (avatar/bio/nav) by 1/3 over the theme's stock
+   240px. Desktop/tablet only: the theme's own @media (max-width: 768px)
+   block switches .sidebar to a full-width, non-fixed block stacked above
+   the content on phones, so this must not leak there or it'd force a fixed
+   320px width into that stacked mobile layout. content-box's left padding
+   grows by the same 80px so the content column keeps its original ~20px
+   gap next to the now-wider sidebar instead of getting overlapped by it. */
+@media (min-width: 769px) {
+  .sidebar {
+    width: 320px;
+  }
+
+  .content-box {
+    padding-left: 340px;
+  }
+}
+
+/* Theme's stock .about .cover-author-image is 100px; bump it up 1/4 to 125px.
+   Also re-target the <img> itself, not just its container: the theme's own
+   @media (max-width: 768px) block hardcodes .about img to a fixed 100px,
+   which would leave the photo undersized inside our now-bigger 125px circle
+   (exposing the container's background color in the gap) on narrow screens. */
+.about .cover-author-image,
+.about .cover-author-image img {
+  width: 125px;
+  height: 125px;
 }
 
 .resume-embed {
@@ -64,6 +97,64 @@
    so those pages get normal block stacking instead. */
 .content-box--article {
   display: block;
+}
+
+/* - - - - - - - - - - Homepage project thumbnails - - - - - - - - - - */
+
+/* main.css only uses this tiled look (thumbnail full-width on top, cards
+   2-per-row, width/margin lifted from its own @media max-width: 992px
+   block) between 480px and 992px — outside that range it falls back to a
+   single-column list with a small side thumbnail. We want the tiled look
+   everywhere down to phone width instead, so make it the unconditional
+   style rather than something confined to that one breakpoint band. */
+.post {
+  width: 48%;
+  margin: 0 0.9% 1.5%;
+  flex-direction: column;
+}
+
+.post .post-thumbnail {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 5 / 3;
+}
+
+.post .post-content {
+  width: 100%;
+}
+
+/* Below this, main.css's own @media (max-width: 480px) still collapses
+   .post to a single column (width: 98%) — restate it here since our
+   unconditional 48% above loads after main.css and would otherwise win at
+   every width regardless of that query, by equal specificity + later
+   source order. */
+@media (max-width: 480px) {
+  .post {
+    width: 98%;
+  }
+}
+
+/* Step up to 3 cards per row, then 4, as the content column widens — rather
+   than jumping straight from 2 to 4. Both keyed off .content-box's own
+   container query (see container-type: inline-size above) rather than
+   viewport width, so they react to the space actually left over next to
+   the sidebar. Order matters here: at any width where both queries match
+   (>= 1100px), the 4-up rule needs to be the one that wins, so it's placed
+   second — later same-specificity rules win ties in CSS regardless of
+   which @container condition is "bigger". */
+@container (min-width: 800px) {
+  .post {
+    /* 31% + 2 × 0.9% margin ≈ 32.8% per card × 3 ≈ 98%. */
+    width: 31%;
+  }
+}
+
+@container (min-width: 1100px) {
+  .post {
+    /* 23% + 2 × 0.9% margin ≈ 24.8% per card × 4 ≈ 99%. */
+    width: 23%;
+  }
 }
 
 /* Wrap media (an <img>/<video>, or an .img-pair/.img-stack group) and text
@@ -264,11 +355,13 @@
   display: block;
 }
 
-/* On a phone, stack everything vertically at full column width. The
-   container query above already unfloats media, but the media keeps its
-   authored desktop size (e.g. 300px) inside a ~370px column, which reads as
-   a stack of undersized thumbnails. Here we also collapse .img-pair from a
-   row to a column and let every image/video fill the column.
+/* On a phone, stack single media at full column width, but keep .img-pair's
+   items side by side on one row rather than stacking them — a pair is
+   usually a before/after or a few angles of the same thing, and stacking
+   them just adds extra scrolling to get past. The container query above
+   already unfloats
+   media, but it keeps its authored desktop size (e.g. 300px) inside a
+   ~370px column, which needs resizing here regardless of row vs. column.
    `!important` is required because the sizes are set as *inline* styles in
    the project markdown (`style="width: 300px;"`), and inline styles beat
    any stylesheet rule without it. Only `width` is overridden — `height`
@@ -283,13 +376,28 @@
     margin: 0 0 0.75em 0;
   }
 
+  /* Force the pair onto one row (the base rule allows wrapping) and let
+     each item (a bare img/video, or a nested .img-stack) share the row
+     evenly — flex-basis: 0 plus flex-grow: 1 splits the available width
+     equally across however many items the pair holds (2, 3, ...), so this
+     doesn't need to hardcode a percentage per item. min-width: 0 lets
+     img/video shrink below their intrinsic size instead of overflowing,
+     since replaced elements otherwise refuse to shrink past that in flex. */
   .img-pair {
-    flex-direction: column;
+    flex-wrap: nowrap;
   }
 
   .img-pair > img,
   .img-pair > video,
-  .img-pair > .img-stack,
+  .img-pair > .img-stack {
+    flex: 1 1 0;
+    width: auto !important;
+    min-width: 0;
+  }
+
+  /* A stack's own children fill whatever width the stack has — the full
+     column when the stack is standalone, or its share of the row above
+     when it's nested inside a pair. */
   .img-stack > img,
   .img-stack > video,
   .img-text-row > img,

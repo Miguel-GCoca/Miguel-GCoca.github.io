@@ -1,9 +1,9 @@
 ---
-title: "Cable-driven Ankle Perturbation System"
-excerpt: "Cable-driven system to measure human gait response to trips and slips by safely pulling on the ankle."
+title: "Exoskeleton Balance Recovery Trip Simulation"
+excerpt: "Cable-driven rig that safely simulates trips to test an exoskeleton's ability to correct a user's motion and restore their balance."
 order: 6
-img: ankle-perturbation-system/full_front_render.JPG
-img-position: 50% 50%
+img: ankle-perturbation-system/cable_noframe_render.JPG
+img-position: 50% 90%
 ---
 <div class="section-header" markdown="1">
 **Research Project, WEAR Lab — Completed July 2023**
@@ -38,14 +38,13 @@ Project role - **CAD Designer**
 
 <div class="img-text-row" markdown="1">
 <div class="img-pair">
+<div class="img-stack">
 <img src="/assets/img/projects/ankle-perturbation-system/ankle_cable.jpg" style="width: 300px;">
 <img src="/assets/img/projects/ankle-perturbation-system/motor_unit.jpg" style="width: 300px;">
 </div>
-- The cable anchors to a strap cuff just below the ankle joint. At the frame end it passes through a load cell wired to the motor unit, so the perturbation force is measured and logged with every trial.
+<img src="/assets/img/projects/ankle-perturbation-system/person_in_frame.jpg" style="width: 300px;">
 </div>
-
-<div class="img-text-row" markdown="1">
-<img src="/assets/img/projects/ankle-perturbation-system/person_in_frame.jpg" style="width: 400px;">
+- The cable anchors to a strap cuff just below the ankle joint. At the frame end it passes through a load cell wired to the motor unit, so the perturbation force is measured and logged with every trial.
 - An overhead safety harness anchored to the 80/20 frame catches the subject if a perturbation trial causes a loss of balance during testing.
 </div>
 

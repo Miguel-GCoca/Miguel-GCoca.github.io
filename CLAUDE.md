@@ -23,8 +23,8 @@ silently, and keep edits scoped to what was asked.
     card's `.post-content`, under the excerpt. Both check the finished list
     against the project's slug, so a project's status only needs to change
     in one place. Shown on every project except the slugs listed in
-    `_data/finished_projects.yml` (currently `bring-roar-to-life`,
-    `anky-jr`, `airfoil-inspired-car`). Update that file as projects get
+    `_data/finished_projects.yml` — check that file for the current list
+    rather than trusting a snapshot here. Update it as projects get
     finished; remove both includes entirely once nothing is left in
     progress.
   - `_includes/head.html` — `<head>`, meta tags, favicon (points at bio-photo.jpg
@@ -210,22 +210,63 @@ the site itself, just quality-of-life for Miguel's shell.
 
 ## Open items as of last session
 
-- `assets/video/siminloop.MP4` (49MB) and `assets/video/training.mp4` (88MB)
-  are sitting untracked — `training.mp4` is now referenced from
-  `bring-roar-to-life.md`. **Flag before committing these**: 88MB is close to
-  GitHub's 100MB hard file-size limit, and both together (~137MB) will bloat
-  the repo permanently (large binaries in git history are painful to remove
-  later) and slow down page load for site visitors. Worth suggesting
-  compression/trimming before they go in, if not already discussed.
-- `anky_irl.jpg` and `team_photo.jpg` are sitting in
-  `assets/img/projects/bring-roar-to-life/` unused — Miguel said he'd figure
-  out their placement himself.
-- Most other projects (`airfoil-inspired-car`, `ankle-perturbation-system`,
-  `dynamic-swept-wing`, `human-augmentation-exosuit`,
-  `mechatronic-musical-instrument`, `multimodal-sensing-system`,
-  `soft-bodied-worm`) still have `img`/`img-position` commented out — no
-  thumbnails added yet, folders exist but are empty (and therefore untracked
-  by git until something's placed in them).
-- There's a stray unfinished bullet ("pushed perturbationsXX") in
-  `bring-roar-to-life.md` — looks like a mid-edit placeholder Miguel left,
-  not something to silently clean up.
+All projects now have real thumbnails and photos/video except
+`soft-bodied-worm`, which is genuinely still a placeholder (empty image
+folder, body references `PLACEHOLDER-1.jpg`/`PLACEHOLDER-2.jpg` — actual
+broken images, not just a missing thumbnail). Miguel's explicit call
+(2026-08-27): leave it as-is for now, don't revisit unless he brings it up.
+
+Mid-way through a full content/copy review of the projects + About page,
+aimed at making the portfolio job-ready (MIT CommLab's engineering
+portfolio guide was used as a structural reference). A first pass of fixes
+is already made in the working tree but **uncommitted** — typo corrections
+across several project pages, the `dynamic-swept-wing` construction-banner
+bug (it's finished but was missing from `finished_projects.yml`), a
+homepage reorder (`multimodal-sensing-system` promoted into the top-4 row
+since it's the one project tied to a real publication, `soft-bodied-worm`
+demoted to last), a new "Technical Lead" role section + 14-DOF stat on
+`bring-roar-to-life`, a new Awards section on `about.md`, and a rewritten
+bio + sidebar blurb (`_config.yml` `about-author`) framing Miguel as a
+mechatronics generalist who specifically names ROS2, reinforcement
+learning, and physical AI (his direction, 2026-08-27) rather than vague
+"controls." Check `git diff` before starting new work so it isn't redone;
+still needs Miguel's review and go-ahead before committing (per the rule
+above — this doesn't change that).
+
+**Needs Miguel's input/material before continuing:**
+- About page Skills list hasn't been touched yet. Planned: add
+  Fabrication/3D-printing/machining, a standalone "Reinforcement Learning"
+  line (currently buried inside "Isaac Lab"), LabVIEW, and Sensor
+  integration/signal processing — all already evidenced in the project
+  write-ups. Still need from Miguel: confirm Fritzing is the actual
+  PCB/schematic tool (a `fritzing.jpg` asset in `bring-roar-to-life`
+  suggests it), and whether he uses git for the capstone's ROS2 code.
+- No project page yet for the Kinova Gen-3 / Assistive Robotics Lab work
+  (his most recent lab position per `resume.pdf`, Sep 2025–Mar 2026) —
+  needs his description + photos.
+- Outcome numbers, if he has them: `human-augmentation-exosuit`
+  (jump-height result), `mechatronic-musical-instrument` (volume
+  reduction / MIDI latency), `multimodal-sensing-system` (validation
+  accuracy vs. commercial devices, from the *Frontiers in Aging* paper),
+  `dynamic-swept-wing` (what the PIV flow test actually showed).
+- HAULC/MUHASS poster PDFs, if they exist — `_pages/posters.md` only has 2
+  of the 4 posters that have text extracts sitting in `assets/files/`.
+- `resume.pdf`/`resume.docx` need manual fixes only Miguel can make (can't
+  edit those formats directly): airfoil should read SD7062 not E214,
+  sensing project should read PPG not ECG (site is confirmed correct on
+  both), plus "coeficient"→coefficient and "dissasembly"→disassembly.
+
+**Ready to do, just needs a go-ahead:**
+- Alt text on project images (most `<img>` tags have none).
+- Compress video/image assets. `assets/video/` is ~330MB across 17 files
+  now, several already committed (including the 88MB `training.mp4` —
+  already in git history, so this is no longer a "flag before committing"
+  situation, it's a real page-weight concern for site visitors regardless
+  of repo size).
+- Small write-ins: a "Result" line atop `bring-roar-to-life`, a closing
+  sentence on `anky-jr` tying it back to the capstone, a line on
+  `dynamic-swept-wing` about the C/C++ controls work the resume credits
+  but the site page doesn't mention.
+- Cross-link About's Publications entry to the `multimodal-sensing-system`
+  project page, and move that project's NIH/publication mention higher up
+  its own page (currently a closing aside).

@@ -1,7 +1,7 @@
 ---
 title: "Multimodal Human and Ambient Sensing System"
 excerpt: "Open-source, wrist-mounted health and activity monitor with IMU and PPG functionality."
-order: 8
+order: 3
 img: multimodal-sensing-system/muhass_custom_board.jpg
 img-position: 50% 70%
 ---
@@ -27,13 +27,18 @@ Project role - **Research Assistant**
 </div>
 
 <div class="img-text-row" markdown="1">
-<img src="/assets/img/projects/multimodal-sensing-system/muhass_custom_board.jpg" style="width: 350px;">
-- A custom PCB integrates IMU, pressure, humidity, PPG (heart rate), and GSR sensors with a microcontroller and battery, stacked into a compact wearable module.
+<div class="img-pair">
+<img src="/assets/img/projects/multimodal-sensing-system/muhass_custom_board.jpg" style="width: 300px;">
+<img src="/assets/img/projects/multimodal-sensing-system/muhass_irl_board.jpg" style="width: 300px;">
 </div>
-
-<div class="img-text-row" markdown="1">
-<img src="/assets/img/projects/multimodal-sensing-system/muhass_irl_board.jpg" style="width: 350px;">
+- A custom PCB integrates IMU, pressure, humidity, PPG (heart rate), and GSR sensors with a microcontroller and battery, stacked into a compact wearable module.
 - Fabricated the housing and wrist mounting for the electronics, minimizing overall footprint while keeping the board and battery accessible.
 </div>
+
+<div class="section-header" markdown="1">
+**Research Application**
+</div>
+
+Developed the testing method used to validate the device against commercially available actigraphy devices, in collaboration with the EMBRACE Lab. That collaboration led to an NIH-funded study, and a co-authorship on the resulting publication in *Frontiers in Aging*.
 
 Presented as a poster: *"Multimodal Human and Ambient Sensing System (MUHASS),"* Department of Mechanical and Aerospace Engineering, University of Central Florida.

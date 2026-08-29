@@ -3,7 +3,7 @@ title: "Human Augmentation via Upper-Lower Body Coupling"
 excerpt: "An unpowered exosuit that improves jump ability by mechanically coupling the arms and legs."
 order: 7
 img: human-augmentation-exosuit/demo_render.jpg
-img-position: -10% 50%
+img-position: -10% 90%
 ---
 <div class="section-header" markdown="1">
 **Research Project, WEAR Lab — Completed March 2023**

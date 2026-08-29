@@ -1,7 +1,7 @@
 ---
 title: "Airfoil Inspired Car"
-excerpt: "Miniature car with an airfoil-inspired design for drag coefficient and flow analysis in a laser vapor wind tunnel."
-order: 3
+excerpt: "Miniature car with an SD7062 airfoil-inspired design for drag coefficient and flow analysis in a laser vapor wind tunnel."
+order: 4
 img: airfoil-inspired-car/full_car_iso.jpg
 # img-position: 50% 50%  # e.g. "30% 70%" to nudge proportionally, or "left 20px top 10px" for an exact pixel offset
 ---
@@ -10,7 +10,7 @@ img: airfoil-inspired-car/full_car_iso.jpg
 </div>
 
 The task set before me in the course was to design a car and measure its drag coefficient experimentally. The car was placed in a laser vapor wind tunnel for two purposes,
-to measure the drag force on the car by attaching it to a strain gague and to visualize the fluid boundary layer.
+to measure the drag force on the car by attaching it to a strain gauge and to visualize the fluid boundary layer.
 I used concepts learned in EAS 3101 Fundamentals of Aerodynamics to guide the design.
 <br>
 **Project goals:**
@@ -33,7 +33,7 @@ Project role - **Lead CAD Designer:** Modeling the car after an inverted airfoil
 
 <div class="img-text-row" markdown="1">
 <img src="/assets/img/projects/airfoil-inspired-car/original_foil_graphed.jpg" style="width: 500px;">
-- The SD7062 foil was chosen for being optimized for low Reynold's number flow, giving a high lift coefficient even at the chambers low airspeeds.
+- The SD7062 foil was chosen for being optimized for low Reynolds number flow, giving a high lift coefficient even at the chamber's low airspeeds.
 - Its thicker cambered body was also necessary to fill the cavity of the 3d print with sand to meet the weight requirement.
 - It was pitched at -4 degrees, chosen due to the results of the foil's drag polars show below.
 </div>

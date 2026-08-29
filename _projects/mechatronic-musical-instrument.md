@@ -1,9 +1,9 @@
 ---
 title: "Mechatronic Musical Instrument"
 excerpt: "A cello redesigned for minimal size, easy assembly/disassembly, ease of use, and silent operation."
-order: 9
+order: 8
 img: mechatronic-musical-instrument/Instrument_closeup_render.jpg
-img-position: 50% 20%
+img-position: 50% 60%
 ---
 <div class="section-header" markdown="1">
 **Research Project, WEAR Lab — Completed February 2022**
@@ -24,7 +24,10 @@ all without giving up the feel of playing a real cello.
 </div>
 
 <div class="img-text-row" markdown="1">
+<div class="img-pair">
+<img src="/assets/img/projects/mechatronic-musical-instrument/IRL_instrument.jpg" style="width: 220px;">
 <img src="/assets/img/projects/mechatronic-musical-instrument/mmi_architecture.jpg" style="width: 500px;">
+</div>
 - A single-board computer reads the piezoelectric sensor in the bridge and converts the signal to MIDI notes, which stream over Bluetooth to a companion smartphone app.
 - The app lets the player pick assistive features, switch between practice, performance-feedback, and sound-synthesizer modes, and hear the result through headphones for silent practice.
 </div>

@@ -9,8 +9,8 @@ img-position: 40% 50%
 **Senior Capstone Project — Completed July 2026**
 </div>
 
-Anky is a low-cost physical AI deployment platform built from 3d printed parts, and hobby level electronics. 
-Designed and built by a fully student lead team of 5 mechanical engineering majors, we set out to prove what can be acheived by to-be-grads with zero guidance.
+Anky is a low-cost, 14-degree-of-freedom (DOF) physical AI deployment platform built from 3d printed parts, and hobby level electronics. 
+Designed and built by a fully student-led team of 5 mechanical engineering majors, we set out to prove what can be achieved by to-be-grads with zero guidance.
 It is by far the most exciting project I've been a part of.
 <br>
 **Project goals:**
@@ -18,12 +18,19 @@ It is by far the most exciting project I've been a part of.
 - Resembling an ankylosaurus in proportions, motion, and anatomy.
 - Voice controlled teleoperation prompted with activation phrase "hey, Anky!" 
 
+<div class="section-header" markdown="1">
+Project role - **Technical Lead:** Ensuring the team reached its stated goals and providing mentorship.
+</div>
+
 <div class="img-text-row" markdown="1">
 <div class="img-pair">
 <img src="/assets/img/projects/bring-roar-to-life/team_photo.jpg" alt="ROAR team" style="width: 300px;">
 <img src="/assets/img/projects/bring-roar-to-life/anky_insim_4-3.jpg" style="width: 300px;">
 <img src="/assets/img/projects/bring-roar-to-life/anky_irl.jpg" style="width: 300px;">
 </div>
+- Mentored teammates and classmates on programming, controls, and electromechanical design.
+- Led weekly meetings and discussions to track longitudinal and time-sensitive project milestones.
+- Facilitated task delegation and milestone reporting to monitor progress at both the individual and team level.
 </div>
 
 <div class="section-header" markdown="1">
@@ -57,7 +64,7 @@ On a RTX 2070 laptop this took about 6 hours to train.
 </video>
 - Isaac Sim sim-in-loop strategy was used to prove the functionality of my control architecture.
 - I used a simulated IMU and encoders which were read by the trained model on a Raspberry Pi over ROS2. The command thetas were then routed back to the sim.
-- This was completed before any purchace order was filed saving time and money by proving our design could work before fabrication began.
+- This was completed before any purchase order was filed, saving time and money by proving our design could work before fabrication began.
 </div>
 
 <div class="img-text-row" markdown="1">
@@ -73,7 +80,7 @@ On a RTX 2070 laptop this took about 6 hours to train.
 </video>
 - This video shows my first attempt at deploying the trained policy, my first time seeing what it can do on physical hardware.
 - Since the policy was trained entirely in simulation it had encountered a "walk forward" command millions of times and knew exactly what to do to execute it.
-- On our first test we acheived our functional goals and all that remained was refinement.
+- On our first test we achieved our functional goals and all that remained was refinement.
 </div>
 
 <div class="section-header" markdown="1">
