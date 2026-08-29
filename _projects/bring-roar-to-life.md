@@ -9,6 +9,8 @@ img-position: 40% 50%
 **Senior Capstone Project — Completed July 2026**
 </div>
 
+**Result:** Anky walked, responded to voice commands, and recovered from external pushes, winning the Faculty's Choice Award at UCF's Summer '26 Senior Design Showcase.
+
 Anky is a low-cost, 14-degree-of-freedom (DOF) physical AI deployment platform built from 3d printed parts, and hobby level electronics. 
 Designed and built by a fully student-led team of 5 mechanical engineering majors, we set out to prove what can be achieved by to-be-grads with zero guidance.
 It is by far the most exciting project I've been a part of.
@@ -25,8 +27,8 @@ Project role - **Technical Lead:** Ensuring the team reached its stated goals an
 <div class="img-text-row" markdown="1">
 <div class="img-pair">
 <img src="/assets/img/projects/bring-roar-to-life/team_photo.jpg" alt="ROAR team" style="width: 300px;">
-<img src="/assets/img/projects/bring-roar-to-life/anky_insim_4-3.jpg" style="width: 300px;">
-<img src="/assets/img/projects/bring-roar-to-life/anky_irl.jpg" style="width: 300px;">
+<img src="/assets/img/projects/bring-roar-to-life/anky_insim_4-3.jpg" alt="Anky simulated in Isaac Sim" style="width: 300px;">
+<img src="/assets/img/projects/bring-roar-to-life/anky_irl.jpg" alt="Anky assembled robot" style="width: 300px;">
 </div>
 - Mentored teammates and classmates on programming, controls, and electromechanical design.
 - Led weekly meetings and discussions to track longitudinal and time-sensitive project milestones.
@@ -52,7 +54,7 @@ On a RTX 2070 laptop this took about 6 hours to train.
 </div>
 
 <div class="img-text-row" markdown="1">
-<img src="/assets/img/projects/bring-roar-to-life/rqt_graph_horizontal.jpg" style="width: 500px;">
+<img src="/assets/img/projects/bring-roar-to-life/rqt_graph_horizontal.jpg" alt="Anky's ROS2 node graph" style="width: 500px;">
 - The rest of the ROS2 architecture is shown. On the left are the microphone and imu inputs, and on the right the servo command outputs.
 - An inference method for the RL policy, represented by the blue ellipse, was run within a ROS2 node.
 - The closed loop feedback for the leg joints relies on modified servos. (see electrical section)
@@ -68,7 +70,7 @@ On a RTX 2070 laptop this took about 6 hours to train.
 </div>
 
 <div class="img-text-row" markdown="1">
-<img src="/assets/img/projects/bring-roar-to-life/filtered_data.jpg" style="width: 500px;">
+<img src="/assets/img/projects/bring-roar-to-life/filtered_data.jpg" alt="Raw vs. filtered IMU angular velocity data" style="width: 500px;">
 - A low-pass filter was used to smooth the IMU data. These graphs show the effect of the filter, the bottom image is the raw unfiltered angular velocity data with ample noise, and the top is the filtered result. 
 - It was essential to add filtering to the IMU and positional feedback readings. Without the filter the robot would wildly try to correct for these random fluctuations.
 - ROS2 bag was used to record this data for analysis in graphing software. 
@@ -89,7 +91,7 @@ Project role - **Electrical Design Lead:** Selection of electronic components an
 
 <div class="img-text-row" markdown="1">
 <div class="img-pair">
-<img src="/assets/img/projects/bring-roar-to-life/fritzing.jpg" style="width: 500px;">
+<img src="/assets/img/projects/bring-roar-to-life/fritzing.jpg" alt="Fritzing power and wiring schematic" style="width: 500px;">
 </div>
 - When designing power delivery for the servos it became clear that the worst case scenario of all servos reaching stall torque would draw over 40 amps, at 8.4 volts our battery would deplete in minutes.
 - Capacitors were wired in parallel to the servos to smooth out voltage drops that happen when the servos draw power
@@ -113,7 +115,7 @@ Project role - **Electrical Design Lead:** Selection of electronic components an
 </div>
 
 <div class="img-text-row" markdown="1">
-<img src="/assets/img/projects/bring-roar-to-life/custom_shield.jpg" style="width: 350px;">
+<img src="/assets/img/projects/bring-roar-to-life/custom_shield.jpg" alt="Custom Arduino Mega shield protoboard" style="width: 350px;">
 - The protoboard pictured, is a custom made Arduino Mega hat, it integrates the servo driver, IMU, analog reading points, I2C communication, and power for all components.
 - The 12 analog reading solder points being so close to one another necessitated EMI shielded wires be used to carry the servo potentiometer feedback signal without crosstalk.
 </div>
@@ -139,6 +141,6 @@ Awarded the **Faculty's Choice Award** at the University of Central Florida Summ
 <video class="lazy-video" loop muted playsinline preload="none" style="width: 400px;">
 <source src="/assets/video/reboot_sequence.mp4" type="video/mp4">
 </video>
-<img src="/assets/img/projects/bring-roar-to-life/trophy.jpg" style="width: 150px;">
+<img src="/assets/img/projects/bring-roar-to-life/trophy.jpg" alt="Faculty's Choice Award trophy" style="width: 150px;">
 </div>
 </div>

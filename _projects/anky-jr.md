@@ -16,7 +16,7 @@ the team would still have a functioning robot even if my reinforcement learning 
 <br>
 
 <div class="img-text-row" markdown="1">
-<img src="/assets/img/projects/anky-jr/catbot.jpg" style="width: 350px;">
+<img src="/assets/img/projects/anky-jr/catbot.jpg" alt="Catbot capstone prototype" style="width: 350px;">
 
 **Project goals:**
 - Establish the ROS2 node architecture and communication method that Anky would later inherit.
@@ -38,7 +38,7 @@ the team would still have a functioning robot even if my reinforcement learning 
 </div>
 
 <div class="img-text-row" markdown="1">
-<img src="/assets/img/projects/anky-jr/catbot_rqt.jpg" style="width: 500px;">
+<img src="/assets/img/projects/anky-jr/catbot_rqt.jpg" alt="ROS2 node graph for Catbot" style="width: 500px;">
 - The ROS2 architecture routes a spoken command through a `/speech_recognizer` node on the Raspberry Pi, to the MATLAB joint solver, and back to the Pi.
 - `/serial_bridge` passed the resulting servo commands from ROS2 to an Arduino, which drove the leg servos directly
 - This pipeline became the foundation for my capstone project's voice-teleoperation structure.
@@ -62,7 +62,9 @@ the team would still have a functioning robot even if my reinforcement learning 
 </div>
 
 <div class="img-text-row" markdown="1">
-<img src="/assets/img/projects/anky-jr/catbot_wiring.jpg" style="width: 500px;">
+<img src="/assets/img/projects/anky-jr/catbot_wiring.jpg" alt="Catbot electrical wiring" style="width: 500px;">
 - The electrical architecture used an Arduino Uno to drive the leg servos, with a Raspberry Pi handling higher-level compute and a variable DC power supply providing servo power separately to the logic and servos.
 - This wiring scheme became the baseline for my capstone project's electrical design.
 </div>
+
+Everything proven here — the ROS2 node structure, the voice-to-motion pipeline, and the electrical layout — carried directly into [Anky](/projects/bring-roar-to-life/), where I served as the capstone team's Control Architecture Lead.

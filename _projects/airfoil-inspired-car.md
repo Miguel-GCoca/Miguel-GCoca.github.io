@@ -32,7 +32,7 @@ Project role - **Lead CAD Designer:** Modeling the car after an inverted airfoil
 </div>
 
 <div class="img-text-row" markdown="1">
-<img src="/assets/img/projects/airfoil-inspired-car/original_foil_graphed.jpg" style="width: 500px;">
+<img src="/assets/img/projects/airfoil-inspired-car/original_foil_graphed.jpg" alt="SD7062 airfoil profile plotted" style="width: 500px;">
 - The SD7062 foil was chosen for being optimized for low Reynolds number flow, giving a high lift coefficient even at the chamber's low airspeeds.
 - Its thicker cambered body was also necessary to fill the cavity of the 3d print with sand to meet the weight requirement.
 - It was pitched at -4 degrees, chosen due to the results of the foil's drag polars show below.
@@ -40,8 +40,8 @@ Project role - **Lead CAD Designer:** Modeling the car after an inverted airfoil
 
 <div class="img-text-row" markdown="1">
 <div class="img-pair">
-<img src="/assets/img/projects/airfoil-inspired-car/drag_polars_1.jpg" style="width: 500px;">
-<img src="/assets/img/projects/airfoil-inspired-car/drag_polars_2.jpg" style="width: 500px;">
+<img src="/assets/img/projects/airfoil-inspired-car/drag_polars_1.jpg" alt="SD7062 drag polar plots, Cl vs Cd and Cl vs alpha" style="width: 500px;">
+<img src="/assets/img/projects/airfoil-inspired-car/drag_polars_2.jpg" alt="SD7062 drag polar plots, Cl/Cd vs alpha and Cd vs alpha" style="width: 500px;">
 </div>
 - Here are the SD7062 airfoil's drag polars (Cl vs Cd, Cl vs alpha, Cl/Cd vs alpha, and Cd vs alpha), plotted at four different Reynolds numbers to pick an angle of attack (AOA).
 - The Cl/Cd vs alpha graph peaks at 4 degrees AOA for low Reynold's flow, with efficiency improving at higher Reynolds number.
@@ -49,8 +49,8 @@ Project role - **Lead CAD Designer:** Modeling the car after an inverted airfoil
 
 <div class="img-text-row" markdown="1">
 <div class="img-pair">
-<img src="/assets/img/projects/airfoil-inspired-car/3d_base_foil.jpg" style="width: 250px;">
-<img src="/assets/img/projects/airfoil-inspired-car/full_car_iso.jpg" style="width: 250px;">
+<img src="/assets/img/projects/airfoil-inspired-car/3d_base_foil.jpg" alt="3D-printed airfoil base shape" style="width: 250px;">
+<img src="/assets/img/projects/airfoil-inspired-car/full_car_iso.jpg" alt="Completed airfoil-inspired car, isometric view" style="width: 250px;">
 </div>
 - I saved the selected foil outline and camber line as a CVS which uploaded to Solidworks served as the outline for the base car model.
 - The model was saved to .Step format and made on my 3d printer. While printing, the print was paused before the top layer was completed and filled with sand.

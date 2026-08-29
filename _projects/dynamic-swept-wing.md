@@ -19,7 +19,7 @@ A morphing airfoil for submersed flow analysis, with user-controlled telescopic 
 
 <div class="img-text-row" markdown="1">
 <div class="img-pair">
-<img src="/assets/img/projects/dynamic-swept-wing/swept_wing_irl.jpg" style="width: 250px;">
+<img src="/assets/img/projects/dynamic-swept-wing/swept_wing_irl.jpg" alt="Assembled dynamic swept wing rig" style="width: 250px;">
 <video class="lazy-video" loop muted playsinline preload="none" style="width: 250px;">
 <source src="/assets/video/wing_animation.mp4" type="video/mp4">
 </video>
@@ -27,6 +27,7 @@ A morphing airfoil for submersed flow analysis, with user-controlled telescopic 
 - Linear actuator controlled sweep angle.
 - Servo controlled wingspan.
 - User input to Arduino Uno over serial.
+- Wrote and optimized the control firmware in C/C++ for speed, accuracy, and ease of use.
 </div>
 
 <div class="section-header" markdown="1">
@@ -50,7 +51,7 @@ Project role - **Systems Integrator:** Responsible for coalescing various pieces
 
 <div class="img-text-row" markdown="1">
 <div class="img-pair">
-<img src="/assets/img/projects/dynamic-swept-wing/tank_diagram.jpg" style="width: 300px;">
+<img src="/assets/img/projects/dynamic-swept-wing/tank_diagram.jpg" alt="Diagram of the wing rig mounted in the water tank" style="width: 300px;">
 <video class="lazy-video" loop muted playsinline preload="none" style="width: 400px;">
 <source src="/assets/video/wing_in_tank.mp4" type="video/mp4">
 </video>

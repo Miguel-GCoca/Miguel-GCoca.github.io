@@ -25,8 +25,8 @@ all without giving up the feel of playing a real cello.
 
 <div class="img-text-row" markdown="1">
 <div class="img-pair">
-<img src="/assets/img/projects/mechatronic-musical-instrument/IRL_instrument.jpg" style="width: 220px;">
-<img src="/assets/img/projects/mechatronic-musical-instrument/mmi_architecture.jpg" style="width: 500px;">
+<img src="/assets/img/projects/mechatronic-musical-instrument/IRL_instrument.jpg" alt="Assembled mechatronic cello" style="width: 220px;">
+<img src="/assets/img/projects/mechatronic-musical-instrument/mmi_architecture.jpg" alt="MMI electronics and signal architecture diagram" style="width: 500px;">
 </div>
 - A single-board computer reads the piezoelectric sensor in the bridge and converts the signal to MIDI notes, which stream over Bluetooth to a companion smartphone app.
 - The app lets the player pick assistive features, switch between practice, performance-feedback, and sound-synthesizer modes, and hear the result through headphones for silent practice.
@@ -38,7 +38,7 @@ Project role - **CAD Designer**
 </div>
 
 <div class="img-text-row" markdown="1">
-<img src="/assets/img/projects/mechatronic-musical-instrument/Instrument_render.jpg" style="width: 500px;">
+<img src="/assets/img/projects/mechatronic-musical-instrument/Instrument_render.jpg" alt="Mechatronic cello CAD render" style="width: 500px;">
 - Designed in SolidWorks and constructed with 3D-printed parts, wood, and metal reinforcement, 
 breaking the instrument down to only its most vital components to shrink overall size.
 - Silent strings and a lack of resonant box cut the volume significantly.

@@ -22,14 +22,14 @@ Project role - **CAD and Electronics Lead**
 </div>
 
 <div class="img-text-row" markdown="1">
-<img src="/assets/img/projects/soft-bodied-worm/tiled_scale_body.jpg" style="width: 500px;">
+<img src="/assets/img/projects/soft-bodied-worm/tiled_scale_body.jpg" alt="Close-up of the tiled flexible scale body" style="width: 500px;">
 - Designed the 3D-printed body: a rigid center chassis flanked by two flexible, tiled-scale arms, so most of the robot's weight stays centered and a single end's contraction can't just slide the whole robot instead of producing a net gait.
 - The tiled scales keep each arm rigid in the horizontal plane while compressing, since the scales can't slide past one another — this let us add side-to-side wave motion as a stretch goal instead of just up-down motion.
 - Routed nylon wire beneath each arm's joint with the chassis, so contracting it creates a moment that shifts more of the robot's weight onto that end, raising its friction against the ground at the right point in the gait.
 </div>
 
 <div class="img-text-row" markdown="1">
-<img src="/assets/img/projects/soft-bodied-worm/full_assembly.jpg" style="width: 500px;">
+<img src="/assets/img/projects/soft-bodied-worm/full_assembly.jpg" alt="Fully assembled soft-bodied worm robot" style="width: 500px;">
 - Built the power system and wiring for two SG90 servos, an Arduino Pro Mini, a TCS34725 RGB sensor, a 9V battery, and a voltage regulator.
 - The Pro Mini has no onboard USB, so it was programmed by tethering it through an Arduino Uno wired to the host laptop.
 - Wrote the control loop: the TCS34725 streams raw red/green/blue/clear values, and a conditional check for red dominance triggers the gait — contract both arms, then release the back arm before the front so it pushes the front forward.

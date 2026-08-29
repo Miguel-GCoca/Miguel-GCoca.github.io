@@ -32,7 +32,7 @@ I'm now looking for my first full-time role as a mechatronics engineer, ideally 
 
 ## Publications
 
-Choudhury, R., Park, J.-H., Banarjee, C., Grisales Coca, M., Fukuda, D. H., Xie, R., Stout, J. R., & Thiamwong, L. (2024). Associations between monitor-independent movement summary (MIMS) and fall risk appraisal combining fear of falling and physiological fall risk in community-dwelling older adults. *Frontiers in Aging*, 5. [doi.org/10.3389/fragi.2024.1284694](https://doi.org/10.3389/fragi.2024.1284694)
+Choudhury, R., Park, J.-H., Banarjee, C., Grisales Coca, M., Fukuda, D. H., Xie, R., Stout, J. R., & Thiamwong, L. (2024). Associations between monitor-independent movement summary (MIMS) and fall risk appraisal combining fear of falling and physiological fall risk in community-dwelling older adults. *Frontiers in Aging*, 5. [doi.org/10.3389/fragi.2024.1284694](https://doi.org/10.3389/fragi.2024.1284694) — built on the validation work from my [Multimodal Human and Ambient Sensing System](/projects/multimodal-sensing-system/) project.
 
 **Conference Posters**
 - [Pre-impact Fall Detection and Balance Recovery Assistance using Lower Limb Hybrid FES-Exoskeleton](/posters/)

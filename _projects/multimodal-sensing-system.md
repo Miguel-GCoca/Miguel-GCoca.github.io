@@ -21,15 +21,15 @@ Project role - **Research Assistant**
 </div>
 
 <div class="img-text-row" markdown="1">
-<img src="/assets/img/projects/multimodal-sensing-system/muhass_architecture.jpg" style="width: 500px;">
+<img src="/assets/img/projects/multimodal-sensing-system/muhass_architecture.jpg" alt="MUHASS system architecture diagram" style="width: 500px;">
 - The device streams data over Bluetooth or Wi-Fi to a companion smartphone app for real-time visualization and analysis of physical activity, heart rate, blood pressure, blood oxygenation, stress, and body/ambient temperature.
 - Implemented a protocol to assess the device's accuracy against commercially available actigraphy devices.
 </div>
 
 <div class="img-text-row" markdown="1">
 <div class="img-pair">
-<img src="/assets/img/projects/multimodal-sensing-system/muhass_custom_board.jpg" style="width: 300px;">
-<img src="/assets/img/projects/multimodal-sensing-system/muhass_irl_board.jpg" style="width: 300px;">
+<img src="/assets/img/projects/multimodal-sensing-system/muhass_custom_board.jpg" alt="Custom MUHASS sensor PCB" style="width: 300px;">
+<img src="/assets/img/projects/multimodal-sensing-system/muhass_irl_board.jpg" alt="Assembled MUHASS wearable module" style="width: 300px;">
 </div>
 - A custom PCB integrates IMU, pressure, humidity, PPG (heart rate), and GSR sensors with a microcontroller and battery, stacked into a compact wearable module.
 - Fabricated the housing and wrist mounting for the electronics, minimizing overall footprint while keeping the board and battery accessible.
