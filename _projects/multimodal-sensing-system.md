@@ -1,12 +1,13 @@
 ---
 title: "Multimodal Human and Ambient Sensing System"
 excerpt: "Open-source, wrist-mounted health and activity monitor with IMU and PPG functionality."
-order: 3
+order: 6
+completed: "September 2023"
 img: multimodal-sensing-system/muhass_custom_board.jpg
 img-position: 50% 70%
 ---
 <div class="section-header" markdown="1">
-**Research Project, WEAR Lab — Completed September 2022**
+**Research Project, WEAR Lab — Completed September 2023**
 </div>
 
 An open-source, wrist-mounted health and activity monitor with IMU and PPG functionality. Most wearable biomechanics and physiologic sensors are standalone systems with proprietary hardware and incompatible communication protocols, making it hard to combine several of them for synchronized, real-time measurement in the field. This project builds a single wrist-worn device and companion app to fill that gap.

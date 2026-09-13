@@ -1,12 +1,13 @@
 ---
 title: "Dynamic Swept Wing"
 excerpt: "Morphing airfoil for submersed flow analysis with user-controlled telescopic span and variable sweep angle."
-order: 5
+order: 4
+completed: "April 2025"
 img: dynamic-swept-wing/piv_tank.jpg
 # img-position: 50% 50%  # e.g. "30% 70%" to nudge proportionally, or "left 20px top 10px" for an exact pixel offset
 ---
 <div class="section-header" markdown="1">
-**Research, WEAR Lab — Completed April 2024**
+**Research, WEAR Lab — Completed April 2025**
 </div>
 
 A morphing airfoil for submersed flow analysis, with user-controlled telescopic span and variable sweep angle.

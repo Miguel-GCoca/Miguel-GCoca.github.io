@@ -9,6 +9,15 @@ He's actively learning Jekyll/git/web dev through this project — when making
 changes, prefer explaining the mechanism (which file, why) over just doing it
 silently, and keep edits scoped to what was asked.
 
+## Design taste
+
+For any frontend/design work in this repo — layout, CSS, typography, color,
+dark-mode handling, choosing a component/design-system approach, or a general
+visual redesign pass — use the `taste-skill` skill installed at
+`.claude/skills/taste-skill/SKILL.md`. It covers picking the right design
+system for the kind of site this is, dark-mode token strategy, avoiding a
+generic "AI slop" SaaS look, and other frontend taste conventions.
+
 ## Stack
 
 - Jekyll (via the `github-pages` gem, so it matches GitHub's actual Pages build
@@ -42,8 +51,14 @@ silently, and keep edits scoped to what was asked.
 
 - `_pages/about.md`, `_pages/resume.md` — standalone content pages.
 - `_projects/*.md` — one file per project shown on the homepage. Front matter:
-  `title`, `excerpt`, `order` (sort order on homepage), `img` (thumbnail path,
-  relative to `assets/img/projects/`), `img-position` (CSS `background-position`
+  `title`, `excerpt`, `order` (sort order on homepage — see the note above
+  under "Open items" on how it's meant to be chronological), `completed`
+  (plain "Month Year" string, rendered pinned to the bottom-right of the
+  homepage tile via `.post-date` in `assets/css/custom.css`; omitted
+  entirely for projects with no fixed completion date, e.g.
+  `kinova-assistive-robotics` which is an ongoing lab position, and for
+  `coming-soon`), `img` (thumbnail path, relative to
+  `assets/img/projects/`), `img-position` (CSS `background-position`
   for the thumbnail crop — supports percentages like `40% 50%` or edge-offset
   syntax like `left 20px top 10px`). Both `img` and `img-position` ship
   commented out as placeholders on projects that don't have a photo yet —
@@ -216,15 +231,22 @@ folder, body references `PLACEHOLDER-1.jpg`/`PLACEHOLDER-2.jpg` — actual
 broken images, not just a missing thumbnail). Miguel's explicit call
 (2026-08-27): leave it as-is for now, don't revisit unless he brings it up.
 
+Homepage `order` values are meant to be strict reverse-chronological by each
+project's "Completed" date (2026-09-13 pass fixed a stale ordering and two
+wrong years found along the way: `multimodal-sensing-system` was actually
+completed September **2023**, not 2022, and `dynamic-swept-wing` April
+**2025**, not 2024 — both corrected in the project body text too). Miguel
+explicitly chose strict chronological over keeping the previous
+publication-based promotion of `multimodal-sensing-system` into the top-4
+row — don't reintroduce that promotion without asking him again.
+
 Mid-way through a full content/copy review of the projects + About page,
 aimed at making the portfolio job-ready (MIT CommLab's engineering
 portfolio guide was used as a structural reference). A first pass of fixes
 is already made in the working tree but **uncommitted** — typo corrections
 across several project pages, the `dynamic-swept-wing` construction-banner
-bug (it's finished but was missing from `finished_projects.yml`), a
-homepage reorder (`multimodal-sensing-system` promoted into the top-4 row
-since it's the one project tied to a real publication, `soft-bodied-worm`
-demoted to last), a new "Technical Lead" role section + 14-DOF stat on
+bug (it's finished but was missing from `finished_projects.yml`), a new
+"Technical Lead" role section + 14-DOF stat on
 `bring-roar-to-life`, a new Awards section on `about.md`, and a rewritten
 bio + sidebar blurb (`_config.yml` `about-author`) framing Miguel as a
 mechatronics generalist who specifically names ROS2, reinforcement
@@ -234,6 +256,9 @@ still needs Miguel's review and go-ahead before committing (per the rule
 above — this doesn't change that).
 
 **Needs Miguel's input/material before continuing:**
+- **High priority (2026-09-02):** `anky-jr` (ankybot) project page needs a
+  new section on failure mode evaluation and analysis. Miguel called this
+  imperative to add soon — needs his write-up/content before it can go in.
 - About page Skills list hasn't been touched yet. Planned: add
   Fabrication/3D-printing/machining, a standalone "Reinforcement Learning"
   line (currently buried inside "Isaac Lab"), LabVIEW, and Sensor

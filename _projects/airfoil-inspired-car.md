@@ -1,7 +1,8 @@
 ---
 title: "Airfoil Inspired Car"
 excerpt: "Miniature car with an SD7062 airfoil-inspired design for drag coefficient and flow analysis in a laser vapor wind tunnel."
-order: 4
+order: 3
+completed: "July 2025"
 img: airfoil-inspired-car/full_car_iso.jpg
 # img-position: 50% 50%  # e.g. "30% 70%" to nudge proportionally, or "left 20px top 10px" for an exact pixel offset
 ---

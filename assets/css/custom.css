@@ -122,6 +122,20 @@
 
 .post .post-content {
   width: 100%;
+  /* .post is a column flexbox (see above) whose height gets stretched to
+     match the tallest tile in its row (main.css sets align-items: stretch
+     on the .content-box row). Growing to fill that leftover space, then
+     pushing .post-date down with margin-top: auto below, is what pins the
+     date to each tile's bottom edge regardless of excerpt length. */
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.post .post-date {
+  margin-top: auto;
+  align-self: flex-end;
+  padding-top: 0.5em;
 }
 
 /* Below this, main.css's own @media (max-width: 480px) still collapses

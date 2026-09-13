@@ -2,6 +2,7 @@
 title: "Bring ROAR to Life: \"Hey, Anky!\""
 excerpt: "Award winning robot dinosaur. Physical AI brain with reinforcement learning training and voice control."
 order: 1
+completed: "July 2026"
 img: bring-roar-to-life/anky_insim.jpg
 img-position: 40% 50%
 ---

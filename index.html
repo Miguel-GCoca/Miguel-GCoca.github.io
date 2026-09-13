@@ -13,6 +13,9 @@ layout: main
     {% unless site.data.finished_projects contains project.slug %}
       {% include construction-banner.html %}
     {% endunless %}
+    {% if project.completed %}
+      <span class="post-date">{{ project.completed }}</span>
+    {% endif %}
   </div>
 </article>
 {% endfor %}

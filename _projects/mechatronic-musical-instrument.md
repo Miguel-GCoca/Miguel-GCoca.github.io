@@ -1,7 +1,8 @@
 ---
 title: "Mechatronic Musical Instrument"
 excerpt: "A cello redesigned for minimal size, easy assembly/disassembly, ease of use, and silent operation."
-order: 8
+order: 9
+completed: "February 2022"
 img: mechatronic-musical-instrument/Instrument_closeup_render.jpg
 img-position: 50% 60%
 ---

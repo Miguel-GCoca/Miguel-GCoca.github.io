@@ -1,7 +1,8 @@
 ---
 title: "Exoskeleton Balance Recovery Trip Simulation"
 excerpt: "Cable-driven rig that safely simulates trips to test an exoskeleton's ability to correct a user's motion and restore their balance."
-order: 6
+order: 7
+completed: "July 2023"
 img: ankle-perturbation-system/cable_noframe_render.JPG
 img-position: 50% 90%
 ---

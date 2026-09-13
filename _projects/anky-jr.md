@@ -2,6 +2,7 @@
 title: "Catbot: Capstone Prototype"
 excerpt: "Prototype of my capstone senior project built in the first half of the course to outline my capstone project's ROS2 and electrical architecture."
 order: 2
+completed: "March 2026"
 img: anky-jr/catbot.jpg
 img-position: 50% 50%  # e.g. "30% 70%" to nudge proportionally, or "left 20px top 10px" for an exact pixel offset
 ---
