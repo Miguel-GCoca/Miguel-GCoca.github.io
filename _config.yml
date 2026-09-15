@@ -1,7 +1,7 @@
 # Site settings
 title: "Miguel Grisales Coca"
 description: >-
-  Portfolio and projects of Miguel Grisales Coca.
+  Portfolio of projects by Miguel Grisales Coca.
 permalink: ':title/'
 baseurl: ""
 url: "https://miguel-gcoca.github.io"
@@ -9,7 +9,7 @@ url: "https://miguel-gcoca.github.io"
 # Author settings
 author: Miguel Grisales Coca
 author-img: bio-photo.jpg
-about-author: "Thanks for stopping by! <br> I'm a mechatronics engineer who loves bringing machines to life. I've got hands-on experience with CAD, fabrication, ROS2, and reinforcement learning for physical AI. I recently graduated and I'm looking for my first full-time role. Stay tuned for what I am cooking up next."
+about-author: "Thanks for stopping by! Stay tuned for what I'm cooking up next. <br> I'm a mechanical engineer who loves bringing machines to life. I don't shy away from learning new skills, I've got hands-on experience with CAD, fabrication, ROS2, and reinforcement learning for embodied-AI. I recently graduated and I'm looking for my first full-time role."
 social-github: Miguel-GCoca
 social-linkedin: "miguel-grisales5675"
 social-email: "MGrisalesCoca@gmail.com"

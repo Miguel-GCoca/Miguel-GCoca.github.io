@@ -7,13 +7,13 @@ title: "About"
 **Mechanical Engineering, University of Central Florida — Class of 2026**
 </div>
 
-I'm Miguel Grisales Coca, a recent grad from the University of Central Florida. My truest passion is robotics, I've been taking apart electronics and repairing devices my whole life. My first job was working the register at Chick-fil-A at 15 years old, just to save up enough to buy my first 3D printer. That being said, I don't just focus on the mechanical side of the field. I work across the full mechatronics stack, from CAD design and fabrication to embedded systems, circuit design, and the ROS2 and reinforcement-learning pipelines that turn a robot into physical AI. I will pursue any knowledge that I need to in order to bring my projects to life.
+I'm Miguel Grisales Coca, a recent grad from the University of Central Florida. My passion is robotics, I've been taking apart electronics and repairing devices my whole life. My first job was working the register at Chick-fil-A at 15 years old, just to save up enough to buy my first 3D printer. I don't just focus on the mechanical side of the field. I have interest and skills spanning the full robotics stack, from CAD design, fabrication, embedded systems, circuit design, ROS2 and sim-to-real pipelines that turn a concept to reality. I will pursue any knowledge that I need to in order to bring my projects to life.
 
-My favorite project to have been a part of was an AI controlled robot dinosaur trained with reinforcement learning to walk before the body was even built, read more about it in my [projects page](/).
+My favorite project to have been a part of was an AI controlled robot dinosaur trained with reinforcement learning to walk in simulation before the body was built, read more about it in my [projects page](/).
 
-My research experience spans the Assistive Robotics Lab, the EMBRACE Lab (fall-risk and mobility research in older adults), and the WEAR Lab (wearable sensing and human augmentation devices), including co-authoring a publication in *Frontiers in Aging* and two conference posters.
+My research experience spans the Assistive Robotics Lab where I was in charge of mechatronics engineering, CAD design, rapid prototyping, and fabrication. The EMBRACE Lab where I pioneered a study using wearable technology in research on fall risk of older adults. The WEAR Lab where I was put in charge of multiple projects developing wearable sensing and human augmentation devices, leading to co-authoring a publication in *Frontiers in Aging* and two conference posters.
 
-I'm now looking for my first full-time role as a mechatronics engineer, ideally one that keeps me close to ROS2, reinforcement learning, and physical AI.
+I'm now looking for my first full-time role as a mechatronics/mechaical/simulation engineer, ideally one that keeps me close to ROS2, reinforcement learning, and physical AI.
 
 <div class="two-col-grid" markdown="1">
 <div markdown="1">

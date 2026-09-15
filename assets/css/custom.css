@@ -8,7 +8,49 @@
 }
 
 .site-nav a {
-  font-size: 18px;
+  font-size: 22px;
+}
+
+/* Theme centers the whole .about block (avatar, name, bio paragraph) via
+   .about { text-align: center }, including in its own mobile media query.
+   Override just the bio text to justify while leaving the avatar/name
+   centered above it. Higher specificity than .about alone wins regardless
+   of source order, so this holds on mobile too without duplicating it
+   inside a media query. */
+.about p {
+  text-align: justify;
+}
+
+/* Last-updated line above the copyright, styled to match the theme's own
+   footer .copyright (font-size 14px, centered, no default <p> margin). */
+.last-updated p {
+  font-size: 14px;
+  text-align: center;
+  margin: 0 0 5px;
+}
+
+/* Lift "Contact me" off the very bottom edge of the fixed sidebar. The
+   sidebar is a flex column with justify-content: space-between (theme's
+   main.css), so header sits at the top and footer is pushed all the way to
+   the bottom; this margin eats into that bottom gap instead of the gap
+   above the footer, so it moves away from the bottom edge without crowding
+   the nav list. Desktop/tablet only, same breakpoint as the widened sidebar
+   above — mobile's .sidebar isn't a fixed 100vh column (it's stacked,
+   position: relative), so this would just push .content-box down instead. */
+@media (min-width: 769px) {
+  .sidebar footer {
+    margin-bottom: 60px;
+  }
+}
+
+/* Theme hides .contact-title and .copyright on phones (its own @media
+   max-width: 768px block) since the sidebar collapses to a normal stacked
+   block there instead of a fixed column; hide the new line the same way so
+   it doesn't show up orphaned without its neighbors. */
+@media only screen and (max-width: 768px) {
+  .last-updated {
+    display: none;
+  }
 }
 
 /* Widen the sidebar banner (avatar/bio/nav) by 1/3 over the theme's stock
