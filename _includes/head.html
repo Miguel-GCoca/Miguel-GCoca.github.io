@@ -85,4 +85,24 @@
 	<link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
 	<link rel="stylesheet" href="{{ "/assets/css/custom.css" | prepend: site.baseurl }}">
 	<script src="{{ "/assets/js/lazy-video.js" | prepend: site.baseurl }}" defer></script>
+	{% if site.goatcounter-code and site.goatcounter-code != "" %}
+	<!-- Analytics (GoatCounter) — private dashboard at
+	     https://{{ site.goatcounter-code }}.goatcounter.com, see CLAUDE.md "Analytics" -->
+	<script data-goatcounter="https://{{ site.goatcounter-code }}.goatcounter.com/count"
+	        async src="//gc.zgo.at/count.js"></script>
+	<script>
+		document.addEventListener('click', function (e) {
+			var a = e.target.closest('a');
+			if (!a || !a.href) return;
+			var isDownload = /\.(pdf|docx?|pptx?|zip|mp4)$/i.test(a.pathname);
+			var isExternal = a.hostname && a.hostname !== location.hostname;
+			if (!isDownload && !isExternal) return;
+			window.goatcounter && window.goatcounter.count({
+				path: (isDownload ? 'download:' : 'outbound:') + a.href,
+				title: a.textContent.trim() || a.href,
+				event: true
+			});
+		});
+	</script>
+	{% endif %}
 </head>

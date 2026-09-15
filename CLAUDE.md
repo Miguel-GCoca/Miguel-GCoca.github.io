@@ -157,6 +157,31 @@ generic "AI slop" SaaS look, and other frontend taste conventions.
     `.section-header` instead of `##` headings, so this mainly affects
     `about.md` today.
 
+## Analytics (GoatCounter)
+
+Page views + outbound-link/download clicks are tracked with
+[GoatCounter](https://www.goatcounter.com) (free for personal/non-commercial
+sites, no cookie banner needed). Wired into `_includes/head.html`, gated on
+`goatcounter-code` in `_config.yml` being non-blank so local dev builds don't
+report views.
+
+- **Setup Miguel still needs to do (I can't do this part — needs his email):**
+  sign up at https://www.goatcounter.com/signup, pick a site code (e.g.
+  `miguel-gcoca`), then put that code into `goatcounter-code:` in
+  `_config.yml`. The dashboard lives at
+  `https://<code>.goatcounter.com` and is login-only — only Miguel can see it.
+- Pageviews are tracked automatically by the script. Clicks on outbound links
+  (different hostname) and file downloads (`.pdf`/`.doc(x)`/`.ppt(x)`/`.zip`/
+  `.mp4`) are additionally sent as custom events, prefixed `outbound:` /
+  `download:` in the GoatCounter dashboard's page list, via the inline click
+  handler in `head.html`.
+- **Excluding Miguel's own visits from the stats:** GoatCounter's script has
+  a built-in per-browser opt-out. Visit the site with `#toggle-goatcounter`
+  appended to the URL (e.g. `https://miguel-gcoca.github.io/#toggle-goatcounter`)
+  once on each of his own browsers/devices — it flips a `localStorage` flag
+  that silently stops sending stats from that browser. Visiting the same URL
+  again toggles it back on. This doesn't affect other visitors.
+
 ## Local dev workflow
 
 - `bundle exec jekyll serve --host 127.0.0.1 --port 4444` runs the local

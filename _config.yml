@@ -15,6 +15,10 @@ social-linkedin: "miguel-grisales5675"
 social-email: "MGrisalesCoca@gmail.com"
 social-phone: "4076975675"
 
+# Analytics — GoatCounter site code (the part before ".goatcounter.com" in
+# your dashboard URL). Leave blank to disable tracking, e.g. in local dev.
+goatcounter-code: "miguel-gcoca"
+
 # Build settings
 markdown: kramdown
 remote_theme: artemsheludko/flexible-jekyll
