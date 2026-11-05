@@ -1,0 +1,7 @@
+<svg class="term-overlay" viewBox="0 0 929 1054" role="img" aria-label="Transfer function G(s) = 16 / (s² + 2.4s + 16); gains Kp = 1, Ki = 0, Kd = 0" preserveAspectRatio="xMidYMid meet">
+<g class="ov-info">
+<rect class="ov-box" x="577.0" y="62" width="340.0" height="80" rx="4"/>
+<text class="ov-text" x="589.0" y="93.1">G(s) = 16 / (s² + 2.4s + 16)</text>
+<text class="ov-text" x="589.0" y="129.1"><tspan>K</tspan><tspan class="ov-sub" dy="6">p</tspan><tspan dy="-6"> = 1, K</tspan><tspan class="ov-sub" dy="6">i</tspan><tspan dy="-6"> = 0, K</tspan><tspan class="ov-sub" dy="6">d</tspan><tspan dy="-6"> = 0</tspan></text>
+</g>
+</svg>

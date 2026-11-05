@@ -67,6 +67,34 @@ generic "AI slop" SaaS look, and other frontend taste conventions.
   images (thumbnail + any inline body images). Folder name doesn't need to
   match the project's filename, but we've kept them matching by convention.
 - `assets/video/` — video clips referenced from project bodies.
+- `_scripts/capstone-overlays/` — `generate.py` + the C++ capstone program's
+  CSV output. Regenerates the SVG layers in `_includes/capstone-overlays/`
+  (inlined on top of every terminal screenshot on
+  `_projects/cpp-robotics-capstone.md`). Miguel's calls (2026-11-05):
+  - Every screenshot gets a top-right info box: the run's transfer function
+    with its parameters substituted (e.g. `G(s) = 16 / (s² + 2.4s + 16)`)
+    and the gains, white Lato Bold on a black box.
+  - Highlights 2, 3, 4 and the robot joint (screenshot 7) get a
+    full-resolution response line, Miguel's picks; Highlight 1 and the
+    1st-order run (6) don't. The line is white, so each is shifted a few px
+    (per-plot `offset`, chosen to need the fewest gaps: down for 3/4,
+    left-and-down for 2, right for 7, since shifting down doesn't separate
+    a slowly settling, near-vertical curve from its `*` marks) and a small
+    gap is masked around any `*` still within 7 px, keeping every `*`
+    visible. No peak/trough circles. The line's only label is "line added
+    for visibility" (his exact wording), in the same boxed style, above the
+    plot's axis header (under the plot on screenshot 7, where the info box
+    takes that strip). "Hide overlay" hides the line and its label but not
+    the info box.
+  - The brief's Highlight 5 (1st-order numerical instability) was cut on
+    purpose since "Not just second order" already shows a 1st-order plant;
+    don't re-add it.
+  Re-run the script rather than hand-editing the SVGs (it measures Lato
+  Bold to fit each box); `--check` verifies the data curve (before the
+  shift) passes within half a column of every ASCII `*`, that the gap
+  positions match the real `*` marks, and that no box covers any terminal
+  text (needs numpy + Pillow). Underscore folder, so Jekyll never
+  publishes it.
 - `assets/files/resume.pdf` / `resume.docx` — Miguel's resume, linked from
   `_pages/resume.md`.
 - `assets/css/custom.css` — all our styling additions/overrides on top of the
@@ -155,7 +183,19 @@ generic "AI slop" SaaS look, and other frontend taste conventions.
     use headings) — the theme has no styling at all for these, so without
     this they render as bare browser defaults. Project bodies mostly use
     `.section-header` instead of `##` headings, so this mainly affects
-    `about.md` today.
+    `about.md` today. `h3`/`h4` got matching styles for the capstone page.
+  - Added for `cpp-robotics-capstone` (reusable, each documented in a
+    comment in `custom.css`): `.term-figure` (screenshot + inline SVG
+    overlay, with a show/hide `.overlay-toggle` button wired up by a small
+    script at the bottom of that page; also floats as the media slot of an
+    `.img-text-row`), `.figure-pair` (two figures side by side, stacks
+    below 760px container width), `.shot-placeholders` (dashed
+    "screenshot coming soon" slots), `.term-block` (program output as text
+    in terminal colors), `.eq-steps`/`.eq` (numbered steps with display
+    equations; no MathJax on the site, equations are HTML + Unicode), and
+    `.data-table` (opt-in clean table style replacing the theme's
+    blue-gradient tables; wrap a Markdown table in
+    `<div class="data-table" markdown="1">`).
 
 ## Analytics (GoatCounter)
 
@@ -279,6 +319,22 @@ learning, and physical AI (his direction, 2026-08-27) rather than vague
 "controls." Check `git diff` before starting new work so it isn't redone;
 still needs Miguel's review and go-ahead before committing (per the rule
 above — this doesn't change that).
+
+**C++ robotics capstone page (`_projects/cpp-robotics-capstone.md`, added
+2026-11-05 from a brief written in `~/learn_cpp/capstone-website-brief/`):**
+in progress (2 of 4 utilities), so it shows the construction banner. Set to
+`order: 0` (first tile) on the reading that an in-progress project is the
+most recent under strict reverse-chronological; Miguel hasn't confirmed
+that placement yet. Still open: the three IK screenshots (placeholders are
+in the page, with a TODO comment), and pushing the latest capstone code to
+the `Microsoft-Cpp-Coursera` repo before the page goes live. Every number on
+the page comes from that brief; don't round or change them. One deliberate
+departure from the brief, Miguel's call (2026-11-05): no C++17 or ROS 2
+mentions on the page; keep it framed around the course only. Screenshot
+`7_robot_joint_pd.png` is cropped from the brief's copy (its terminal tab
+bar, rows 53-93, removed so it matches the others; 789 x 1013 px) and uses
+`.term-figure--narrow` so its text renders at the same size as the 929 px
+shots.
 
 **Needs Miguel's input/material before continuing:**
 - **High priority (2026-09-02):** `anky-jr` (ankybot) project page needs a
