@@ -579,9 +579,23 @@
   height: auto;
 }
 
+/* Each screenshot links to its full-size PNG (terminal text is unreadable
+   at phone width otherwise). The SVG overlay on top has pointer-events:
+   none, so clicks and taps fall through to this link. */
+.term-figure__zoom {
+  display: block;
+  cursor: zoom-in;
+}
+
+/* The frame clips with overflow: hidden, so draw the focus ring inside. */
+.term-figure__zoom:focus-visible {
+  outline: 3px solid #f4f4f4;
+  outline-offset: -3px;
+}
+
 /* SVG layer on each screenshot (all drawn by generate.py):
-   - .ov-info: top-right box with the run's transfer function and gains,
-     on every screenshot.
+   - .ov-info: top-right box with the run's transfer function and gains
+     (robot dimensions and target for the IK runs), on every screenshot.
    - .ov-data: on the hard-to-read plots only, the full-resolution response
      line plus its "line added for visibility" note. White, Miguel's choice;
      since the `*` marks are white too, generate.py shifts the line 8 px down
@@ -746,46 +760,36 @@
   }
 }
 
-/* Clearly marked slot for screenshots that don't exist yet, sized to the
-   same 929 x 1054 terminal shots as the ones next to it so the layout won't
-   jump when the real images replace them. */
-.shot-placeholders {
+/* Three screenshots side by side (the IK calculator runs), each with its
+   caption. Stacks to one column at the same container width where
+   .img-text-row unfloats its media. */
+.figure-trio {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1em;
+  gap: 0 1.5em;
   max-width: 1100px;
   margin: 0.5em 0 1.5em;
 }
 
-.shot-placeholder {
-  aspect-ratio: 929 / 1054;
-  border: 2px dashed #b7bfcc;
-  border-radius: 4px;
-  background: #f1f3f6;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1em;
-  box-sizing: border-box;
-  font-size: 13px;
-  line-height: 1.45;
-  color: #5a6170;
+.figure-trio .term-figure {
+  max-width: none;
 }
 
-.shot-placeholder strong {
-  color: #263959;
-  display: block;
-  margin-bottom: 0.4em;
-}
-
-@container (max-width: 700px) {
-  .shot-placeholders {
+@container (max-width: 900px) {
+  .figure-trio {
     grid-template-columns: 1fr;
   }
 
-  .shot-placeholder {
-    aspect-ratio: auto;
-    min-height: 7em;
+  .figure-trio .term-figure {
+    max-width: 520px;
+  }
+}
+
+@supports not (container-type: inline-size) {
+  @media (max-width: 1200px) {
+    .figure-trio {
+      grid-template-columns: 1fr;
+    }
   }
 }
 

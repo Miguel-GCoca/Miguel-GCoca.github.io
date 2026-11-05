@@ -39,7 +39,17 @@ generic "AI slop" SaaS look, and other frontend taste conventions.
   - `_includes/head.html` — `<head>`, meta tags, favicon (points at bio-photo.jpg
     instead of the theme's default icon). Viewport meta is
     `width=device-width, initial-scale=1` — deliberately no `maximum-scale`,
-    since that previously blocked pinch-zoom on iOS.
+    since that previously blocked pinch-zoom on iOS. `custom.css` is linked
+    with `?v={{ site.time | date: '%s' }}` (build timestamp) so each deploy
+    gets a fresh stylesheet URL: GitHub Pages lets browsers cache CSS for 10
+    minutes, and on 2026-11-05 that paired the new capstone page with a stale
+    cached `custom.css`, so the overlays rendered as giant black shapes until
+    a hard refresh. The description/og:description/twitter:description tags
+    all use one `meta_description` value: `page.description`, else the
+    page's `excerpt` (project pages only set `excerpt`), else
+    `site.description`, HTML-stripped, with U+2060 word joiners removed,
+    and escaped. Before 2026-11-05 they read only `page.description`, so
+    every page had an empty meta description.
   - `index.html` — homepage template; loops over the `projects` collection
     instead of the theme's default blog-post loop
   Any other theme file (e.g. `_layouts/default.html`) is still coming straight
@@ -57,7 +67,8 @@ generic "AI slop" SaaS look, and other frontend taste conventions.
   homepage tile via `.post-date` in `assets/css/custom.css`; omitted
   entirely for projects with no fixed completion date, e.g.
   `kinova-assistive-robotics` which is an ongoing lab position, and for
-  `coming-soon`), `img` (thumbnail path, relative to
+  `coming-soon`; `cpp-robotics-capstone` uses `"In progress"` until all 4
+  utilities are done, then the finish month), `img` (thumbnail path, relative to
   `assets/img/projects/`), `img-position` (CSS `background-position`
   for the thumbnail crop — supports percentages like `40% 50%` or edge-offset
   syntax like `left 20px top 10px`). Both `img` and `img-position` ship
@@ -71,9 +82,11 @@ generic "AI slop" SaaS look, and other frontend taste conventions.
   CSV output. Regenerates the SVG layers in `_includes/capstone-overlays/`
   (inlined on top of every terminal screenshot on
   `_projects/cpp-robotics-capstone.md`). Miguel's calls (2026-11-05):
-  - Every screenshot gets a top-right info box: the run's transfer function
-    with its parameters substituted (e.g. `G(s) = 16 / (s² + 2.4s + 16)`)
-    and the gains, white Lato Bold on a black box.
+  - Every screenshot gets a top-right info box, white Lato Bold on a black
+    box: for the PID runs, the transfer function with its parameters
+    substituted (e.g. `G(s) = 16 / (s² + 2.4s + 16)`) and the gains; for
+    the three IK runs (8-10, no overlay line), the robot's dimensions and
+    target(s). The page says the boxes were added for it.
   - Highlights 2, 3, 4 and the robot joint (screenshot 7) get a
     full-resolution response line, Miguel's picks; Highlight 1 and the
     1st-order run (6) don't. The line is white, so each is shifted a few px
@@ -86,6 +99,12 @@ generic "AI slop" SaaS look, and other frontend taste conventions.
     plot's axis header (under the plot on screenshot 7, where the info box
     takes that strip). "Hide overlay" hides the line and its label but not
     the info box.
+  - The homepage tile image, `assets/img/projects/cpp-robotics-capstone/
+    thumbnail.png`, is also generated (`build_thumbnail`): Highlight 4 with
+    the same line baked into a PNG (tile images are CSS backgrounds, so an
+    SVG can't sit on them), cropped to just the plot rows (his call: no
+    axis header above, no program text below) and padded at the sides with
+    the terminal background to 5:3.
   - The brief's Highlight 5 (1st-order numerical instability) was cut on
     purpose since "Not just second order" already shows a 1st-order plant;
     don't re-add it.
@@ -189,8 +208,10 @@ generic "AI slop" SaaS look, and other frontend taste conventions.
     overlay, with a show/hide `.overlay-toggle` button wired up by a small
     script at the bottom of that page; also floats as the media slot of an
     `.img-text-row`), `.figure-pair` (two figures side by side, stacks
-    below 760px container width), `.shot-placeholders` (dashed
-    "screenshot coming soon" slots), `.term-block` (program output as text
+    below 760px container width), `.figure-trio` (three side by side, for
+    the IK screenshots; stacks below 900px), `.term-figure__zoom` (the link
+    wrapping each screenshot, opening the full-size PNG: terminal text is
+    unreadable at phone width otherwise), `.term-block` (program output as text
     in terminal colors), `.eq-steps`/`.eq` (numbered steps with display
     equations; no MathJax on the site, equations are HTML + Unicode), and
     `.data-table` (opt-in clean table style replacing the theme's
@@ -321,20 +342,48 @@ still needs Miguel's review and go-ahead before committing (per the rule
 above — this doesn't change that).
 
 **C++ robotics capstone page (`_projects/cpp-robotics-capstone.md`, added
-2026-11-05 from a brief written in `~/learn_cpp/capstone-website-brief/`):**
-in progress (2 of 4 utilities), so it shows the construction banner. Set to
-`order: 0` (first tile) on the reading that an in-progress project is the
-most recent under strict reverse-chronological; Miguel hasn't confirmed
-that placement yet. Still open: the three IK screenshots (placeholders are
-in the page, with a TODO comment), and pushing the latest capstone code to
-the `Microsoft-Cpp-Coursera` repo before the page goes live. Every number on
-the page comes from that brief; don't round or change them. One deliberate
-departure from the brief, Miguel's call (2026-11-05): no C++17 or ROS 2
-mentions on the page; keep it framed around the course only. Screenshot
-`7_robot_joint_pd.png` is cropped from the brief's copy (its terminal tab
-bar, rows 53-93, removed so it matches the others; 789 x 1013 px) and uses
-`.term-figure--narrow` so its text renders at the same size as the 929 px
-shots.
+2026-11-05 from a brief written in `~/learn_cpp/capstone-website-brief/`,
+then revised from that folder's `IMPROVEMENTS.md` the same day):**
+in progress (2 of 4 utilities), so it shows the construction banner and its
+tile reads `completed: "In progress"`. Placed second, right after "Bring
+ROAR to Life", with `order: 1.5` (Miguel's call, 2026-11-05: ROAR stays the
+first impression; a decimal avoids renumbering every other project). This
+is a deliberate exception to the strict reverse-chronological ordering
+below; don't "fix" it. The IK screenshots (8-10) are in, cropped from
+the brief's copies (their title bar held a capture-script label), and the
+capstone code is pushed (`b355eb9`). Every number on the page comes from the
+brief or IMPROVEMENTS.md; don't round or change them. Deliberate
+decisions, don't undo:
+- **No C++17 mention**, Miguel's call (2026-11-05); keep it framed around
+  the course. **ROS 2 is the exception**: since IMPROVEMENTS.md T1 (his
+  direction) the intro, Tech details and tile excerpt say the capstone is
+  *written in the style of* a ROS 2 package (package-style layout,
+  namespaced includes, snake_case, ROS 2-style include guards). Never say
+  it *is* a ROS 2 package or uses ROS features: no `package.xml`, no
+  `ament_cmake`, no colcon, no nodes/topics. The Tech details text names
+  the include folder `includes/`, as it is on GitHub today; if Miguel
+  renames it to `include/`, update that one string.
+- **Highlight 2's ζ/ωn show as "n/a" on purpose**, with a note: full PID
+  makes that loop third order, so the program's second-order estimates
+  (0.7017 / 8.6461, still visible in the screenshot) don't apply. The
+  Before column and the robot joint's estimates are valid and stay.
+- **Plain-Euler claim is "about 8% growth in 5 s"** (peak 1.042), not
+  "would blow up".
+- The ASCII plots have **26 rows**, not 25.
+- **Voice:** the prose was rewritten on 2026-11-05 at Miguel's request with
+  his humanizer skill (`~/job_search/.claude/skills/humanizer/SKILL.md`;
+  it lives in that repo, so it isn't auto-loaded here; read it directly).
+  Its house rules apply to any new copy on this page: no em/en dashes, drop
+  hyphens that aren't needed ("closed loop", "full resolution"; kept:
+  3-DOF, Routh-Hurwitz, semi-implicit, the 10-90% range, repo names), no
+  colon before a list, at most 2 clause commas per sentence, minimal bold,
+  no bold-label bullet lists, no self-diminishing disclaimers. That pass
+  rephrased the IMPROVEMENTS.md replacement sentences too; facts and
+  numbers are unchanged, so don't restore the file's exact wording.
+- Screenshot `7_robot_joint_pd.png` is cropped from the brief's copy (its
+  terminal tab bar, rows 53-93, removed; 789 x 1013 px) and uses
+  `.term-figure--narrow` so its text renders at the same size as the
+  929 px shots.
 
 **Needs Miguel's input/material before continuing:**
 - **High priority (2026-09-02):** `anky-jr` (ankybot) project page needs a

@@ -1,4 +1,4 @@
-<svg class="term-overlay" viewBox="0 0 789 1013" role="img" aria-label="Transfer function G(s) = 1 / (0.1s² + 0.1s + 1); gains Kp = 3, Ki = 0, Kd = 0.15. Overlay: full-resolution response, lightly damped oscillation settling at 0.75" preserveAspectRatio="xMidYMid meet">
+<svg class="term-overlay" viewBox="0 0 789 1013" role="img" aria-label="Added for this page: G(s) = 1 / (0.1s² + 0.1s + 1); Kp = 3, Ki = 0, Kd = 0.15. Overlay: full resolution response, lightly damped oscillation settling at 0.75" preserveAspectRatio="xMidYMid meet">
 <g class="ov-data">
 <defs><mask id="ov-gaps-7" maskUnits="userSpaceOnUse" x="0" y="0" width="789" height="1013"><rect width="789" height="1013" fill="#fff"/><circle cx="378.5" cy="216.5" r="7.0" fill="#000"/><circle cx="638.5" cy="238.5" r="7.0" fill="#000"/><circle cx="648.5" cy="260.5" r="7.0" fill="#000"/><circle cx="498.5" cy="282.5" r="7.0" fill="#000"/><circle cx="468.5" cy="326.5" r="7.0" fill="#000"/><circle cx="538.5" cy="348.5" r="7.0" fill="#000"/><circle cx="548.5" cy="370.5" r="7.0" fill="#000"/><circle cx="508.5" cy="392.5" r="7.0" fill="#000"/><circle cx="488.5" cy="414.5" r="7.0" fill="#000"/><circle cx="498.5" cy="436.5" r="7.0" fill="#000"/><circle cx="518.5" cy="458.5" r="7.0" fill="#000"/><circle cx="508.5" cy="546.5" r="7.0" fill="#000"/></mask></defs>
 <g mask="url(#ov-gaps-7)">
@@ -9,7 +9,7 @@
 </g>
 <g class="ov-info">
 <rect class="ov-box" x="429.9" y="62" width="347.1" height="80" rx="4"/>
-<text class="ov-text" x="441.9" y="93.1">G(s) = 1 / (0.1s² + 0.1s + 1)</text>
+<text class="ov-text" x="441.9" y="93.1"><tspan>G(s) = 1 / (0.1s² + 0.1s + 1)</tspan></text>
 <text class="ov-text" x="441.9" y="129.1"><tspan>K</tspan><tspan class="ov-sub" dy="6">p</tspan><tspan dy="-6"> = 3, K</tspan><tspan class="ov-sub" dy="6">i</tspan><tspan dy="-6"> = 0, K</tspan><tspan class="ov-sub" dy="6">d</tspan><tspan dy="-6"> = 0.15</tspan></text>
 </g>
 </svg>
