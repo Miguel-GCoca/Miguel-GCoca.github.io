@@ -213,7 +213,9 @@ generic "AI slop" SaaS look, and other frontend taste conventions.
     wrapping each screenshot, opening the full-size PNG: terminal text is
     unreadable at phone width otherwise), `.term-block` (program output as text
     in terminal colors), `.eq-steps`/`.eq` (numbered steps with display
-    equations; no MathJax on the site, equations are HTML + Unicode), and
+    equations; no MathJax on the site, equations are HTML + Unicode),
+    `.course-cert` (small linked certificate thumbnail + text), `.plot-figure`
+    (wide light-background graph with caption, zoom link), and
     `.data-table` (opt-in clean table style replacing the theme's
     blue-gradient tables; wrap a Markdown table in
     `<div class="data-table" markdown="1">`).
@@ -344,7 +346,7 @@ above — this doesn't change that).
 **C++ robotics capstone page (`_projects/cpp-robotics-capstone.md`, added
 2026-11-05 from a brief written in `~/learn_cpp/capstone-website-brief/`,
 then revised from that folder's `IMPROVEMENTS.md` the same day):**
-in progress (2 of 4 utilities), so it shows the construction banner and its
+in progress (3 of 4 utilities; only the go to goal controller is left), so it shows the construction banner and its
 tile reads `completed: "In progress"`. Placed second, right after "Bring
 ROAR to Life", with `order: 1.5` (Miguel's call, 2026-11-05: ROAR stays the
 first impression; a decimal avoids renumbering every other project). This
@@ -360,9 +362,9 @@ decisions, don't undo:
   *written in the style of* a ROS 2 package (package-style layout,
   namespaced includes, snake_case, ROS 2-style include guards). Never say
   it *is* a ROS 2 package or uses ROS features: no `package.xml`, no
-  `ament_cmake`, no colcon, no nodes/topics. The Tech details text names
-  the include folder `includes/`, as it is on GitHub today; if Miguel
-  renames it to `include/`, update that one string.
+  `ament_cmake`, no colcon, no nodes/topics. (Saying the Kalman code passes
+  the ROS 2 style linters is fine; it's from KALMAN.md.) The include folder
+  was renamed to `include/` on GitHub (`bc08885`) and Tech details says so.
 - **Highlight 2's ζ/ωn show as "n/a" on purpose**, with a note: full PID
   makes that loop third order, so the program's second-order estimates
   (0.7017 / 8.6461, still visible in the screenshot) don't apply. The
@@ -380,6 +382,20 @@ decisions, don't undo:
   no bold-label bullet lists, no self-diminishing disclaimers. That pass
   rephrased the IMPROVEMENTS.md replacement sentences too; facts and
   numbers are unchanged, so don't restore the file's exact wording.
+- **Utility 3 (Kalman filter), added 2026-11-06 from
+  `~/learn_cpp/capstone-website-brief/KALMAN.md`**, which overrides
+  BRIEF.md where they conflict. Call it a Kalman filter tracking angle and
+  speed (2 states), never "1D". It's a simulation, the program prints text
+  only, and the 3 graphs (`kalman_*.png`, `.plot-figure`) were made from its
+  CSV. The results table quotes the CSV run behind the graphs; screenshots
+  11/12 are separate runs, so their numbers differ slightly on purpose (the
+  page says so). Keep the "slight lag" and "near optimal, not exactly
+  optimal" honesty points, and "about 5× / 90× / 660×" unsharpened. 11/12
+  had their title bar cropped and a mouse cursor painted out; they have no
+  info-box overlay since encoder, R and Q are already printed in the shot.
+- The Coursera certificate (`certificate.jpg`, rendered from Miguel's PDF,
+  completed 2026-11-03) sits at the top in a `.course-cert` block linking to
+  the Coursera verify URL.
 - Screenshot `7_robot_joint_pd.png` is cropped from the brief's copy (its
   terminal tab bar, rows 53-93, removed; 789 x 1013 px) and uses
   `.term-figure--narrow` so its text renders at the same size as the

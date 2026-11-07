@@ -884,6 +884,71 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* Course certificate block at the top of a project page: a small linked
+   thumbnail of the certificate with a line of text beside it. Stacks below
+   480px container width. Usage:
+   <div class="course-cert"><a href="(verify URL)"><img ...></a><p>...</p></div> */
+.course-cert {
+  display: flex;
+  align-items: center;
+  gap: 1.25em;
+  max-width: 760px;
+  margin: 0 0 1.5em;
+}
+
+.course-cert a:has(> img) {
+  flex: 0 0 200px;
+  line-height: 0;
+}
+
+.course-cert img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #d8dde5;
+  border-radius: 3px;
+}
+
+.course-cert p {
+  margin: 0;
+}
+
+@container (max-width: 480px) {
+  .course-cert {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* A graph made for the page from a program's CSV output (light background,
+   unlike the terminal screenshots). Wide, so it gets the full content
+   column; the image links to its full-size PNG like .term-figure__zoom. */
+.plot-figure {
+  max-width: 900px;
+  margin: 0.5em 0 1.5em;
+}
+
+.plot-figure a {
+  display: block;
+  line-height: 0;
+  cursor: zoom-in;
+}
+
+.plot-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #e3e6eb;
+  border-radius: 4px;
+}
+
+.plot-figure figcaption {
+  font-size: 13px;
+  line-height: 1.45;
+  color: #6b6b6b;
+  margin-top: 0.5em;
+  max-width: 760px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .term-overlay .ov-data {
     transition: none;
