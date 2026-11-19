@@ -238,6 +238,16 @@ report views.
   `.mp4`) are additionally sent as custom events, prefixed `outbound:` /
   `download:` in the GoatCounter dashboard's page list, via the inline click
   handler in `head.html`.
+- Time on page (added 2026-11-18): GoatCounter has no native duration
+  metric, so `assets/js/goatcounter-time.js` (loaded from `head.html`
+  inside the same gate) measures visible time and sends one event per page
+  view, the first time the page is hidden, with the path
+  `time:<pathname> <bucket>` (buckets `0-10s`, `10-30s`, `30s-1m`, `1-2m`,
+  `2-5m`, `5-10m`, `10m+`). Filter the dashboard by `time:` to read it.
+  Known trade-off: time after a visitor leaves the tab and comes back isn't
+  added, to keep it one event per view. Because GoatCounter counts events
+  in every widget, the dashboard's Totals widget should have "Exclude
+  events" ticked (widget settings) or the site total roughly doubles.
 - **Excluding Miguel's own visits from the stats:** GoatCounter's script has
   a built-in per-browser opt-out. Visit the site with `#toggle-goatcounter`
   appended to the URL (e.g. `https://miguel-gcoca.github.io/#toggle-goatcounter`)
