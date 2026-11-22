@@ -1,26 +1,26 @@
 ---
 title: "Exoskeleton Balance Recovery Trip Simulation"
-excerpt: "Cable-driven rig that safely simulates trips to test an exoskeleton's ability to correct a user's motion and restore their balance."
+excerpt: "Cable driven rig that safely simulates trips to test how well an exoskeleton corrects a user's motion and restores their balance."
 order: 7
 completed: "July 2023"
 img: ankle-perturbation-system/cable_noframe_render.JPG
 img-position: 50% 90%
 ---
 <div class="section-header" markdown="1">
-**Research Project, WEAR Lab — Completed July 2023**
+**Research project, WEAR Lab. Completed July 2023**
 </div>
 
-A cable-driven system to measure human gait response to trips and slips by suddenly and safely pulling on the ankle. 
-This rig is a piece of a larger project to develop a hybrid FES-exoskeleton to actively help a person recover their balance after a trip or slip.
-This cage offers a testing ground for safe and repeatable testing for simulated trips and slips.
+A cable driven system that measures human gait response to trips and slips by suddenly and safely pulling on the ankle.
+The rig is one piece of a larger project to develop a hybrid FES exoskeleton that actively helps a person recover their balance after a trip or slip.
+Its cage gives a safe and repeatable testing ground for simulated trips and slips.
 <br>
-**Project goals:**
+**Project goals**
 - Safely apply a sudden, controlled pull to a subject's ankle to simulate a trip or slip during gait.
 - Route cable actuation so the ankle can be perturbed in any planar direction.
-- Build a rigid, low-deflection frame able to withstand perturbation loads without compromising subject safety.
+- Build a rigid, low deflection frame that withstands perturbation loads without compromising subject safety.
 
 <div class="section-header" markdown="1">
-Project role - **CAD Designer**
+Project role: **CAD Designer**
 </div>
 
 <div class="img-text-row" markdown="1">
@@ -28,13 +28,13 @@ Project role - **CAD Designer**
 <img src="/assets/img/projects/ankle-perturbation-system/full_front_render.JPG" alt="80/20 frame, front view render" style="width: 300px;">
 <img src="/assets/img/projects/ankle-perturbation-system/fullview_behind_render.JPG" alt="80/20 frame, rear view render" style="width: 300px;">
 </div>
-- Created an 80/20 aluminum extrusion frame in SolidWorks, sized to enclose a treadmill and support an overhead harness mount, and used FEA to prove a factor of safety of two with minimal deflection.
-- The frame also encloses the hybrid FES-exoskeleton test subjects wear on the treadmill, so the perturbation and the assistive balance response can be studied together.
+- Created an 80/20 aluminum extrusion frame in SolidWorks, sized to enclose a treadmill and support an overhead harness mount. Used FEA to prove a factor of safety of two with minimal deflection.
+- The frame also encloses the hybrid FES exoskeleton that test subjects wear on the treadmill, so the perturbation and the assistive balance response can be studied together.
 </div>
 
 <div class="img-text-row" markdown="1">
 <img src="/assets/img/projects/ankle-perturbation-system/cable_noframe_render.JPG" alt="Cable routing render, frame hidden" style="width: 500px;">
-- Routed the cable system so it can pull an ankle in any planar direction, running from a motor-driven reel at the base of the frame up to a cuff at the subject's ankle.
+- Routed the cable system so it can pull an ankle in any planar direction. The cable runs from a motor driven reel at the base of the frame up to a cuff at the subject's ankle.
 </div>
 
 <div class="img-text-row" markdown="1">
