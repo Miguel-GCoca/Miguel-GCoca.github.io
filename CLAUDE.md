@@ -67,8 +67,8 @@ generic "AI slop" SaaS look, and other frontend taste conventions.
   homepage tile via `.post-date` in `assets/css/custom.css`; omitted
   entirely for projects with no fixed completion date, e.g.
   `kinova-assistive-robotics` which is an ongoing lab position, and for
-  `coming-soon`; `cpp-robotics-capstone` uses `"In progress"` until all 4
-  utilities are done, then the finish month), `img` (thumbnail path, relative to
+  `coming-soon`; `cpp-robotics-capstone` read `"In progress"` until it
+  finished with 3 utilities, now `"November 2026"`), `img` (thumbnail path, relative to
   `assets/img/projects/`), `img-position` (CSS `background-position`
   for the thumbnail crop — supports percentages like `40% 50%` or edge-offset
   syntax like `left 20px top 10px`). Both `img` and `img-position` ship
@@ -356,8 +356,14 @@ above — this doesn't change that).
 **C++ robotics capstone page (`_projects/cpp-robotics-capstone.md`, added
 2026-11-05 from a brief written in `~/learn_cpp/capstone-website-brief/`,
 then revised from that folder's `IMPROVEMENTS.md` the same day):**
-in progress (3 of 4 utilities; only the go to goal controller is left), so it shows the construction banner and its
-tile reads `completed: "In progress"`. Placed second, right after "Bring
+finished with 3 utilities (IK, PID simulator, Kalman filter): Miguel cut
+the planned 4th, a go to goal controller, on 2026-11-22 (scope change in
+`~/learn_cpp/capstone-website-brief/website-update.md`, which overrides
+BRIEF.md/KALMAN.md on the utility count). Don't re-add it or a "Next
+utility" roadmap entry. Tile reads `completed: "November 2026"` and the
+slug is in `_data/finished_projects.yml` (no construction banner). The IK
+screenshots (8-10) still show the old 5-item menu; recapturing them is a
+capstone-side task, leave them unless Miguel asks. Placed second, right after "Bring
 ROAR to Life", with `order: 1.5` (Miguel's call, 2026-11-05: ROAR stays the
 first impression; a decimal avoids renumbering every other project). This
 is a deliberate exception to the strict reverse-chronological ordering
