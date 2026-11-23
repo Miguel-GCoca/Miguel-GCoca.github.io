@@ -115,7 +115,12 @@ generic "AI slop" SaaS look, and other frontend taste conventions.
   text (needs numpy + Pillow). Underscore folder, so Jekyll never
   publishes it.
 - `assets/files/resume.pdf` / `resume.docx` — Miguel's resume, linked from
-  `_pages/resume.md`.
+  `_pages/resume.md`. Replaced 2026-11-22 with his newest resume from
+  `~/job_search/mechanical/` (his pick of category):
+  `jpl_mechatronics_engineer/Miguel_GCoca_Resume_11-13-26.{pdf,docx}`,
+  copied unchanged under the same filenames so no links change. To update
+  it again, copy the newer file over these two; check first that it
+  doesn't name the target employer (that one didn't).
 - `assets/css/custom.css` — all our styling additions/overrides on top of the
   theme's `main.css`, linked from the local `_includes/head.html`. Reusable
   classes defined here:
@@ -323,11 +328,9 @@ the site itself, just quality-of-life for Miguel's shell.
 
 ## Open items as of last session
 
-All projects now have real thumbnails and photos/video except
-`soft-bodied-worm`, which is genuinely still a placeholder (empty image
-folder, body references `PLACEHOLDER-1.jpg`/`PLACEHOLDER-2.jpg` — actual
-broken images, not just a missing thumbnail). Miguel's explicit call
-(2026-08-27): leave it as-is for now, don't revisit unless he brings it up.
+All projects now have real thumbnails and photos/video, including
+`soft-bodied-worm` (`tiled_scale_body.jpg`, `full_assembly.jpg`). Every
+`<img>` on the site has alt text.
 
 Homepage `order` values are meant to be strict reverse-chronological by each
 project's "Completed" date (2026-09-13 pass fixed a stale ordering and two
@@ -338,20 +341,36 @@ explicitly chose strict chronological over keeping the previous
 publication-based promotion of `multimodal-sensing-system` into the top-4
 row — don't reintroduce that promotion without asking him again.
 
-Mid-way through a full content/copy review of the projects + About page,
-aimed at making the portfolio job-ready (MIT CommLab's engineering
-portfolio guide was used as a structural reference). A first pass of fixes
-is already made in the working tree but **uncommitted** — typo corrections
-across several project pages, the `dynamic-swept-wing` construction-banner
-bug (it's finished but was missing from `finished_projects.yml`), a new
-"Technical Lead" role section + 14-DOF stat on
-`bring-roar-to-life`, a new Awards section on `about.md`, and a rewritten
-bio + sidebar blurb (`_config.yml` `about-author`) framing Miguel as a
-mechatronics generalist who specifically names ROS2, reinforcement
-learning, and physical AI (his direction, 2026-08-27) rather than vague
-"controls." Check `git diff` before starting new work so it isn't redone;
-still needs Miguel's review and go-ahead before committing (per the rule
-above — this doesn't change that).
+The job-ready content/copy review of the projects + About page (MIT
+CommLab's engineering portfolio guide as a structural reference) is
+committed: typo fixes, the `dynamic-swept-wing` banner fix, the
+"Technical Lead" section + 14-DOF stat on `bring-roar-to-life`, the Awards
+section on `about.md`, and the bio + sidebar blurb (`_config.yml`
+`about-author`) framing Miguel as a mechatronics generalist who names
+ROS2, reinforcement learning and physical AI (his direction, 2026-08-27).
+
+**Site-wide humanizer pass (2026-11-22, commit `2318719`, Miguel reviewed
+the diffs himself):** every project page, About, the sidebar blurb and
+the tile excerpts were rewritten with his humanizer skill
+(`~/job_search/.claude/skills/humanizer/SKILL.md`), so its house rules now
+apply to new copy anywhere on the site, not just the capstone page: no
+em/en dashes, no unneeded hyphens, no colon before a list, at most 2
+clause commas per sentence, sentence case headings. Conventions that pass
+set, keep them consistent on new pages:
+- Header lines read `**<Course or project type>. Completed <Month Year>**`
+  (period, not an em dash).
+- Role headers read `Project role: **<Role>**. <Sentence with a subject>.`
+- `**Project goals**` has no trailing colon.
+- About's skill levels are `Skill (level)`; languages are `English
+  (advanced speaking, writing and reading)`.
+- Kept as-is on purpose: project titles (title case, they match the
+  posters), paper/poster titles, proper names with hyphens (Chick-fil-A,
+  T-LEARN, Wi-Fi, Joon-Hyuk), "4-bar", "co-authorship", and image alt text.
+- Two logic quirks were flagged to Miguel and left unresolved (his call
+  to revisit): the airfoil page's premise (friction lowers measured drag)
+  vs. its result (downforce raised the drag reading), and the worm page
+  calling speed "the main limitation" while saying it moved orders of
+  magnitude faster than real worms.
 
 **C++ robotics capstone page (`_projects/cpp-robotics-capstone.md`, added
 2026-11-05 from a brief written in `~/learn_cpp/capstone-website-brief/`,
@@ -421,13 +440,6 @@ decisions, don't undo:
 - **High priority (2026-09-02):** `anky-jr` (ankybot) project page needs a
   new section on failure mode evaluation and analysis. Miguel called this
   imperative to add soon — needs his write-up/content before it can go in.
-- About page Skills list hasn't been touched yet. Planned: add
-  Fabrication/3D-printing/machining, a standalone "Reinforcement Learning"
-  line (currently buried inside "Isaac Lab"), LabVIEW, and Sensor
-  integration/signal processing — all already evidenced in the project
-  write-ups. Still need from Miguel: confirm Fritzing is the actual
-  PCB/schematic tool (a `fritzing.jpg` asset in `bring-roar-to-life`
-  suggests it), and whether he uses git for the capstone's ROS2 code.
 - No project page yet for the Kinova Gen-3 / Assistive Robotics Lab work
   (his most recent lab position per `resume.pdf`, Sep 2025–Mar 2026) —
   needs his description + photos.
@@ -438,22 +450,13 @@ decisions, don't undo:
   `dynamic-swept-wing` (what the PIV flow test actually showed).
 - HAULC/MUHASS poster PDFs, if they exist — `_pages/posters.md` only has 2
   of the 4 posters that have text extracts sitting in `assets/files/`.
-- `resume.pdf`/`resume.docx` need manual fixes only Miguel can make (can't
-  edit those formats directly): airfoil should read SD7062 not E214,
-  sensing project should read PPG not ECG (site is confirmed correct on
-  both), plus "coeficient"→coefficient and "dissasembly"→disassembly.
 
 **Ready to do, just needs a go-ahead:**
-- Alt text on project images (most `<img>` tags have none).
-- Compress video/image assets. `assets/video/` is ~330MB across 17 files
-  now, several already committed (including the 88MB `training.mp4` —
-  already in git history, so this is no longer a "flag before committing"
-  situation, it's a real page-weight concern for site visitors regardless
-  of repo size).
-- Small write-ins: a "Result" line atop `bring-roar-to-life`, a closing
-  sentence on `anky-jr` tying it back to the capstone, a line on
-  `dynamic-swept-wing` about the C/C++ controls work the resume credits
-  but the site page doesn't mention.
-- Cross-link About's Publications entry to the `multimodal-sensing-system`
-  project page, and move that project's NIH/publication mention higher up
-  its own page (currently a closing aside).
+- Compress video/image assets further, if page weight matters. The videos
+  have already been shrunk: `assets/video/` was ~330MB and is 66MB across
+  17 files as of 2026-11-22 (largest `catbot_walking_full_demo.mp4` 18MB;
+  `training.mp4` went from 88MB to 11MB). The old large versions remain in
+  git history.
+- Move `multimodal-sensing-system`'s NIH/publication mention higher up
+  its own page (still a closing "Research application" section). About's
+  Publications entry already links to the project page.
