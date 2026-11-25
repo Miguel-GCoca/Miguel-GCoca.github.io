@@ -10,8 +10,6 @@ img-position: 40% 50%
 **Senior capstone project. Completed July 2026**
 </div>
 
-**Result:** Anky walked, responded to voice commands and recovered from external pushes. It won the Faculty's Choice Award at UCF's Summer '26 Senior Design Showcase.
-
 Anky is a low cost physical AI deployment platform with 14 degrees of freedom (DOF), built from 3D printed parts and hobby level electronics.
 A fully student led team of 5 mechanical engineering majors designed and built it. We set out to prove what soon to be grads can achieve with zero guidance.
 It's by far the most exciting project I've been part of.
@@ -24,7 +22,7 @@ It's by far the most exciting project I've been part of.
 [View the code on GitHub](https://github.com/Miguel-GCoca/ankybot)
 
 <div class="section-header" markdown="1">
-Anky won the **Faculty's Choice Award** at the University of Central Florida's Summer '26 Senior Design Showcase.
+**Results**
 </div>
 
 <div class="img-text-row" markdown="1">
@@ -37,6 +35,8 @@ Anky won the **Faculty's Choice Award** at the University of Central Florida's S
 </video>
 <img src="/assets/img/projects/bring-roar-to-life/trophy.jpg" alt="Faculty's Choice Award trophy" style="width: 150px;">
 </div>
+- Anky walked, responded to voice commands and recovered from external pushes.
+- It won the Faculty's Choice Award at UCF's Summer '26 Senior Design Showcase.
 </div>
 
 <div class="section-header" markdown="1">
