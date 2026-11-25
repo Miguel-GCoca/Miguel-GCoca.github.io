@@ -24,6 +24,22 @@ It's by far the most exciting project I've been part of.
 [View the code on GitHub](https://github.com/Miguel-GCoca/ankybot)
 
 <div class="section-header" markdown="1">
+Anky won the **Faculty's Choice Award** at the University of Central Florida's Summer '26 Senior Design Showcase.
+</div>
+
+<div class="img-text-row" markdown="1">
+<div class="img-pair">
+<video class="lazy-video" loop muted playsinline preload="none" style="width: 400px;">
+<source src="/assets/video/first_full_test.mp4" type="video/mp4">
+</video>
+<video class="lazy-video" loop muted playsinline preload="none" style="width: 400px;">
+<source src="/assets/video/reboot_sequence.mp4" type="video/mp4">
+</video>
+<img src="/assets/img/projects/bring-roar-to-life/trophy.jpg" alt="Faculty's Choice Award trophy" style="width: 150px;">
+</div>
+</div>
+
+<div class="section-header" markdown="1">
 Project role: **Technical Lead**. I made sure the team reached its stated goals and provided mentorship.
 </div>
 
@@ -152,19 +168,3 @@ Project role: **Electrical Design Lead**. I selected the electronic components a
 </div>
 
 Swapping the protoboard for a custom PCB would add about $200. The robot wasn't designed for mass production, and building one takes a team that knows the design well.
-
-<div class="section-header" markdown="1">
-Anky won the **Faculty's Choice Award** at the University of Central Florida's Summer '26 Senior Design Showcase.
-</div>
-
-<div class="img-text-row" markdown="1">
-<div class="img-pair">
-<video class="lazy-video" loop muted playsinline preload="none" style="width: 400px;">
-<source src="/assets/video/first_full_test.mp4" type="video/mp4">
-</video>
-<video class="lazy-video" loop muted playsinline preload="none" style="width: 400px;">
-<source src="/assets/video/reboot_sequence.mp4" type="video/mp4">
-</video>
-<img src="/assets/img/projects/bring-roar-to-life/trophy.jpg" alt="Faculty's Choice Award trophy" style="width: 150px;">
-</div>
-</div>
