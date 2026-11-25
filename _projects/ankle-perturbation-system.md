@@ -20,7 +20,7 @@ Its cage gives a safe and repeatable testing ground for simulated trips and slip
 - Build a rigid, low deflection frame that withstands perturbation loads without compromising subject safety.
 
 <div class="section-header" markdown="1">
-Project role: **CAD Designer**
+**CAD design**
 </div>
 
 <div class="img-text-row" markdown="1" data-toc-sub="80/20 test frame">
@@ -28,7 +28,7 @@ Project role: **CAD Designer**
 <img src="/assets/img/projects/ankle-perturbation-system/full_front_render.JPG" alt="80/20 frame, front view render" style="width: 300px;">
 <img src="/assets/img/projects/ankle-perturbation-system/fullview_behind_render.JPG" alt="80/20 frame, rear view render" style="width: 300px;">
 </div>
-- Created an 80/20 aluminum extrusion frame in SolidWorks, sized to enclose a treadmill and support an overhead harness mount. Used FEA to prove a factor of safety of two with minimal deflection.
+- As CAD Designer, I created an 80/20 aluminum extrusion frame in SolidWorks, sized to enclose a treadmill and support an overhead harness mount. Used FEA to prove a factor of safety of two with minimal deflection.
 - The frame also encloses the hybrid FES exoskeleton that test subjects wear on the treadmill, so the perturbation and the assistive balance response can be studied together.
 </div>
 

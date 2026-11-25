@@ -32,7 +32,7 @@ A morphing airfoil for submersed flow analysis, with user controlled telescopic 
 </div>
 
 <div class="section-header" markdown="1">
-Project role: **Systems Integrator**. I was responsible for bringing the separate pieces and prototypes together into one deliverable.
+**Systems integration**
 </div>
 
 
@@ -40,6 +40,7 @@ Project role: **Systems Integrator**. I was responsible for bringing the separat
 <video class="lazy-video" loop muted playsinline preload="none" style="width: 600px;">
 <source src="/assets/video/tensioning_sidebyside.mp4" type="video/mp4">
 </video>
+- As Systems Integrator, I was responsible for bringing the separate pieces and prototypes together into one deliverable.
 - The tensioning mechanism uses principles from EML 3262 Kinematics of Mechanisms.
 - Once the 4-bar linkage reaches its toggle position, the links lock in place.
 - The locked linkage holds the Bowden cables tight like a vise. That tensions the pulley system that engages the telescopic wingspan.

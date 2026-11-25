@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // The first box is the "Course. Completed Month Year" line.
       label = 'Overview';
     } else {
-      // "Project role: **Technical Lead**. I made sure..." -> "Technical Lead"
+      // A box's label is its bold text, e.g. "**Testing and results**"
       var strong = el.classList.contains('section-header') && el.querySelector('strong');
       label = (strong ? strong.textContent : el.textContent).trim().replace(/[.:]$/, '');
     }

@@ -20,12 +20,12 @@ None of them make use of arm swing, even though arm swing on its own is known to
 - Keep the suit fully unpowered and wearable, relying purely on mechanical coupling.
 
 <div class="section-header" markdown="1">
-Project role: **CAD Designer**
+**CAD design**
 </div>
 
 <div class="img-text-row" markdown="1" data-toc-sub="Cable layout">
 <img src="/assets/img/projects/human-augmentation-exosuit/demo_render.jpg" alt="Exosuit CAD render showing cable routing" style="width: 500px;">
-- Modeled the exosuit in SolidWorks. A hip belt holds the gearbox and two recoil devices per side. An input cable runs from a handle to one recoil device,
+- As CAD Designer, I modeled the exosuit in SolidWorks. A hip belt holds the gearbox and two recoil devices per side. An input cable runs from a handle to one recoil device,
 and an output cable runs from the other down to the back of the heel.
 - Pulling the handles through the squat to jump motion rotates the ankle into plantarflexion right as the legs extend, adding the arms' energy to the jump.
 </div>

@@ -35,12 +35,12 @@ The goal was to do all that without giving up the feel of playing a real cello.
 
 
 <div class="section-header" markdown="1">
-Project role: **CAD Designer**
+**CAD design**
 </div>
 
 <div class="img-text-row" markdown="1">
 <img src="/assets/img/projects/mechatronic-musical-instrument/Instrument_render.jpg" alt="Mechatronic cello CAD render" style="width: 500px;">
-- Designed in SolidWorks and built from 3D printed parts, wood and metal reinforcement.
+- As CAD Designer, I designed it in SolidWorks. It was built from 3D printed parts, wood and metal reinforcement.
 I broke the instrument down to only its most vital components to shrink its overall size.
 - Silent strings and no resonant box cut the volume significantly.
 - A piezoelectric sensor in the bridge picks up the vibration needed to reconstruct the sound.

@@ -38,8 +38,8 @@ generic "AI slop" SaaS look, and other frontend taste conventions.
     progress.
     On project pages it also renders an empty `.page-toc` nav under the
     bio; `assets/js/page-toc.js` fills it from the page's `.section-header`
-    boxes and `##` headings (first box becomes "Overview", "Project role:
-    **X**" becomes "X") and hides the bio, highlighting the section being
+    boxes and `##` headings (first box becomes "Overview", other boxes use
+    their bold text) and hides the bio, highlighting the section being
     read. Pages with fewer than 2 entries keep the bio. New sections show
     up in the TOC automatically. Other pages opt in with `toc: true` in
     front matter (About, Posters); `toc-overview: false` (Posters) keeps
@@ -377,7 +377,12 @@ clause commas per sentence, sentence case headings. Conventions that pass
 set, keep them consistent on new pages:
 - Header lines read `**<Course or project type>. Completed <Month Year>**`
   (period, not an em dash).
-- Role headers read `Project role: **<Role>**. <Sentence with a subject>.`
+- Section headers name the topic, not the role (`**CAD design**`,
+  `**Technical leadership**`, `**Systems integration**`); Miguel's call
+  2026-11-25, replacing the old `Project role: **<Role>**. ...` headers.
+  The role goes in the section's first bullet instead, e.g. `- As CAD
+  Designer, I modeled ...` (or a lead sentence where the section starts
+  with prose, like ROAR's control architecture).
 - `**Project goals**` has no trailing colon.
 - About's skill levels are `Skill (level)`; languages are `English
   (advanced speaking, writing and reading)`.

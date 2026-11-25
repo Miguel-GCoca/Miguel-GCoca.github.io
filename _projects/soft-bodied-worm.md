@@ -19,12 +19,12 @@ A soft bodied robot, built with two other ME students, that emulates a worm's in
 - Balance body geometry and weight distribution so the motion at each end adds up to net forward travel instead of just rocking in place.
 
 <div class="section-header" markdown="1">
-Project role: **CAD and Electronics Lead**
+**CAD and electronics**
 </div>
 
 <div class="img-text-row" markdown="1" data-toc-sub="Tiled scale body">
 <img src="/assets/img/projects/soft-bodied-worm/tiled_scale_body.jpg" alt="Close-up of the tiled flexible scale body" style="width: 500px;">
-- Designed the 3D printed body, a rigid center chassis between two flexible arms made of tiled scales. Most of the robot's weight stays centered, so one end's contraction can't just slide the whole robot instead of producing a net gait.
+- As CAD and Electronics Lead, I designed the 3D printed body, a rigid center chassis between two flexible arms made of tiled scales. Most of the robot's weight stays centered, so one end's contraction can't just slide the whole robot instead of producing a net gait.
 - The scales can't slide past one another, so each arm stays rigid in the horizontal plane while it compresses. That let us add side to side wave motion as a stretch goal on top of up and down motion.
 - Routed nylon wire beneath each arm's joint with the chassis. Contracting the wire creates a moment that shifts more of the robot's weight onto that end. That raises its friction against the ground at the right point in the gait.
 </div>

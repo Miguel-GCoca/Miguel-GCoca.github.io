@@ -18,11 +18,12 @@ An open source, wrist mounted health and activity monitor with IMU and PPG sensi
 - Minimize the device's footprint through a custom housing and wrist mount design.
 
 <div class="section-header" markdown="1">
-Project role: **Research Assistant**
+**Device development**
 </div>
 
 <div class="img-text-row" markdown="1" data-toc-sub="System architecture">
 <img src="/assets/img/projects/multimodal-sensing-system/muhass_architecture.jpg" alt="MUHASS system architecture diagram" style="width: 500px;">
+- I worked on this project as a Research Assistant.
 - The device streams data over Bluetooth or Wi-Fi to a companion smartphone app for real time visualization and analysis. The app covers physical activity, heart rate, blood pressure, blood oxygenation, stress and body/ambient temperature.
 - Implemented a protocol to assess the device's accuracy against commercially available actigraphy devices.
 </div>

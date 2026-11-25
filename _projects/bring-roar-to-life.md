@@ -40,7 +40,7 @@ It's by far the most exciting project I've been part of.
 </div>
 
 <div class="section-header" markdown="1">
-Project role: **Technical Lead**. I made sure the team reached its stated goals and provided mentorship.
+**Technical leadership**
 </div>
 
 <div class="img-text-row" markdown="1">
@@ -49,14 +49,17 @@ Project role: **Technical Lead**. I made sure the team reached its stated goals 
 <img src="/assets/img/projects/bring-roar-to-life/anky_insim_4-3.jpg" alt="Anky simulated in Isaac Sim" style="width: 300px;">
 <img src="/assets/img/projects/bring-roar-to-life/anky_irl.jpg" alt="Anky assembled robot" style="width: 300px;">
 </div>
+- As Technical Lead, I made sure the team reached its stated goals and provided mentorship.
 - Mentored teammates and classmates on programming, controls and electromechanical design.
 - Led weekly meetings and discussions to track long term and time sensitive project milestones.
 - Ran task delegation and milestone reporting to monitor progress at both the individual and team level.
 </div>
 
 <div class="section-header" markdown="1">
-Project role: **Control Architecture Lead**. I developed a machine learning policy and ROS2 nodes on Ubuntu Linux.
+**Control architecture**
 </div>
+
+As Control Architecture Lead, I developed a machine learning policy and ROS2 nodes on Ubuntu Linux.
 
 The video below shows the second generation Anky learning to walk over 6 thousand iterations (top right corner).
 Each iteration had 1024 individual robot environments, which brings the total to over 6 million training instances.
@@ -105,13 +108,14 @@ Training took about 6 hours on an RTX 2070 laptop.
 </div>
 
 <div class="section-header" markdown="1">
-Project role: **Electrical Design Lead**. I selected the electronic components and designed the power and safety systems.
+**Electrical design**
 </div>
 
 <div class="img-text-row" markdown="1">
 <div class="img-pair">
 <img src="/assets/img/projects/bring-roar-to-life/fritzing.jpg" alt="Fritzing power and wiring schematic" style="width: 500px;">
 </div>
+- As Electrical Design Lead, I selected the electronic components and designed the power and safety systems.
 - While designing power delivery for the servos, I found that the worst case of every servo at stall torque would draw over 40 amps. At 8.4 volts that would drain our battery in minutes.
 - Capacitors wired in parallel with the servos smooth out the voltage drops that happen when the servos draw power.
 - Each buck converter was rated for 20 amps. The motors could draw over 40, so I used two.
