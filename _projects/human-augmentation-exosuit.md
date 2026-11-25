@@ -23,20 +23,20 @@ None of them make use of arm swing, even though arm swing on its own is known to
 Project role: **CAD Designer**
 </div>
 
-<div class="img-text-row" markdown="1">
+<div class="img-text-row" markdown="1" data-toc-sub="Cable layout">
 <img src="/assets/img/projects/human-augmentation-exosuit/demo_render.jpg" alt="Exosuit CAD render showing cable routing" style="width: 500px;">
 - Modeled the exosuit in SolidWorks. A hip belt holds the gearbox and two recoil devices per side. An input cable runs from a handle to one recoil device,
 and an output cable runs from the other down to the back of the heel.
 - Pulling the handles through the squat to jump motion rotates the ankle into plantarflexion right as the legs extend, adding the arms' energy to the jump.
 </div>
 
-<div class="img-text-row" markdown="1">
+<div class="img-text-row" markdown="1" data-toc-sub="Planetary gearbox">
 <img src="/assets/img/projects/human-augmentation-exosuit/planetary_render.jpg" alt="Planetary gearbox CAD render" style="width: 500px;">
 - Modeled a prototype planetary gearbox to convert the cable length pulled by the hands into the shorter length needed at the ankle. The target was a 12:1 conversion ratio in as small a package as possible.
 - I chose a planetary layout over other gearbox types for its size to torque advantage, and because staging its ratios makes it more compact.
 </div>
 
-<div class="img-text-row" markdown="1">
+<div class="img-text-row" markdown="1" data-toc-sub="Recoil device">
 <img src="/assets/img/projects/human-augmentation-exosuit/recoil_render.jpg" alt="Recoil device CAD render" style="width: 500px;">
 - Reverse engineered a pull start mechanism so it could be modified to integrate the planetary gear system.
 - Each cable spools onto its own spring loaded recoil device. This keeps the line tensioned at all times and lets the user move freely when the mechanism is disengaged.

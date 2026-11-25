@@ -32,6 +32,7 @@ It has three tools. There's an inverse kinematics calculator, a control systems 
 [View the code on GitHub](https://github.com/Miguel-GCoca/Microsoft-Cpp-Coursera/tree/main/Cpp-Fundamentals/2.Fundamentals-Capstone/basics_capstone)
 
 ## Utility 1: 3-DOF inverse kinematics calculator
+{: data-toc-label="Inverse kinematics"}
 
 You give it the dimensions of a 3 joint robot arm and a point in space, and it works out the joint angles that put the arm's tip on that point.
 
@@ -87,6 +88,7 @@ All three runs use the same robot (*h* = 0.5, *L*<sub>1</sub> = 1, *L*<sub>2</su
 </div>
 
 ## Utility 2: Plant + PID controller simulator
+{: data-toc-label="PID simulator"}
 
 You pick a plant (the system you're controlling), type in its parameters and then type in the PID gains (*K*<sub>p</sub>, *K*<sub>i</sub>, *K*<sub>d</sub>). The program simulates the closed loop step response, draws it as an ASCII plot in the terminal and prints a table of control metrics. From there you can retune the gains or switch plants without restarting. It shows this block diagram when you open it.
 
@@ -267,6 +269,7 @@ The 0.75 is the correct result, and you can predict it exactly. At steady state 
 There are no ζ or ω<sub>n</sub> estimates for the PI run. PI adds a zero to the closed loop, and the standard second order formulas don't fit that.
 
 ## Utility 3: Wheel encoder Kalman filter
+{: data-toc-label="Kalman filter"}
 
 A PID controller tries to hold a simulated wheel at 1 rad/s. Its only sensor is an encoder, which reports the wheel's angle in whole ticks, so the program has to work out the speed from those readings. The program runs three versions of the same system side by side and compares them.
 

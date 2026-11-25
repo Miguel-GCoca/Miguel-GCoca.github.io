@@ -21,7 +21,7 @@ The goal was to do all that without giving up the feel of playing a real cello.
 - Make it silent enough to practice on without disturbing others.
 
 <div class="section-header" markdown="1">
-**Project overview**
+**System architecture**
 </div>
 
 <div class="img-text-row" markdown="1">

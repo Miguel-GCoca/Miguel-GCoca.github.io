@@ -1,9 +1,11 @@
 ---
 permalink: /posters/
 title: "Posters"
+toc: true
+toc-overview: false
 ---
 
-<div class="section-header" markdown="1">
+<div class="section-header" markdown="1" data-toc-label="Fall Detection and Balance Recovery">
 **Pre-impact Fall Detection and Balance Recovery Assistance using Lower Limb Hybrid FES-Exoskeleton**
 </div>
 

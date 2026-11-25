@@ -41,7 +41,19 @@ generic "AI slop" SaaS look, and other frontend taste conventions.
     boxes and `##` headings (first box becomes "Overview", "Project role:
     **X**" becomes "X") and hides the bio, highlighting the section being
     read. Pages with fewer than 2 entries keep the bio. New sections show
-    up in the TOC automatically.
+    up in the TOC automatically. Other pages opt in with `toc: true` in
+    front matter (About, Posters); `toc-overview: false` (Posters) keeps
+    the first box's own title instead of "Overview", and
+    `data-toc-label="..."` on a `.section-header` div sets a short label (also works on `##` headings via a kramdown
+    `{: data-toc-label="..."}` line, used for the capstone's 3 utilities).
+    `data-toc-sub="..."` on an `.img-text-row` adds an indented sub-entry
+    under the section above it, with no visible change to the page. Used
+    where one header covers several topics (Catbot, ankle rig, exosuit,
+    airfoil, worm, MUHASS, swept wing). ROAR has none on purpose: it
+    already has 6 sections and subs would make the list too long. Catbot's
+    and MMI's second header was "Project overview", which duplicated the
+    first box's "Overview" entry, so they were renamed "Build and testing"
+    and "System architecture" (2026-11-25).
   - `_includes/head.html` — `<head>`, meta tags, favicon (points at bio-photo.jpg
     instead of the theme's default icon). Viewport meta is
     `width=device-width, initial-scale=1` — deliberately no `maximum-scale`,

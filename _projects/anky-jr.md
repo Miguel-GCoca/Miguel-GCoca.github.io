@@ -25,10 +25,10 @@ the team would still have a functioning robot even if my reinforcement learning 
 </div>
 
 <div class="section-header" markdown="1">
-**Project overview**
+**Build and testing**
 </div>
 
-<div class="img-text-row" markdown="1">
+<div class="img-text-row" markdown="1" data-toc-sub="Voice control demo">
 <video class="lazy-video" loop muted controls playsinline preload="none" style="width: 500px;">
 <source src="/assets/video/catbot_walking_full_demo.mp4" type="video/mp4">
 </video>
@@ -38,14 +38,14 @@ the team would still have a functioning robot even if my reinforcement learning 
 - The final version could control speed and gait type, but it had no IMU for stabilization.
 </div>
 
-<div class="img-text-row" markdown="1">
+<div class="img-text-row" markdown="1" data-toc-sub="ROS2 architecture">
 <img src="/assets/img/projects/anky-jr/catbot_rqt.jpg" alt="ROS2 node graph for Catbot" style="width: 500px;">
 - The ROS2 architecture routes a spoken command through a `/speech_recognizer` node on the Raspberry Pi, to the MATLAB joint solver and back to the Pi.
 - `/serial_bridge` passed the resulting servo commands from ROS2 to an Arduino, which drove the leg servos directly.
 - This pipeline became the foundation for my capstone project's voice teleoperation structure.
 </div>
 
-<div class="img-text-row" markdown="1">
+<div class="img-text-row" markdown="1" data-toc-sub="MATLAB gait planning">
 <video class="lazy-video" loop muted playsinline preload="none" style="width: 500px;">
 <source src="/assets/video/matlab_gait_example.mp4" type="video/mp4">
 </video>
@@ -54,7 +54,7 @@ the team would still have a functioning robot even if my reinforcement learning 
 - The leg order, step size and gait duty factor are all parameters, so the gait type can be changed quickly.
 </div>
 
-<div class="img-text-row" markdown="1">
+<div class="img-text-row" markdown="1" data-toc-sub="First gait test">
 <video class="lazy-video" loop muted playsinline preload="none" style="width: 400px;">
 <source src="/assets/video/catbot_walking_simple.mp4" type="video/mp4">
 </video>
@@ -62,7 +62,7 @@ the team would still have a functioning robot even if my reinforcement learning 
 - This test confirmed the leg trajectories translated correctly from the MATLAB simulation into real servo motion.
 </div>
 
-<div class="img-text-row" markdown="1">
+<div class="img-text-row" markdown="1" data-toc-sub="Electrical wiring">
 <img src="/assets/img/projects/anky-jr/catbot_wiring.jpg" alt="Catbot electrical wiring" style="width: 500px;">
 - An Arduino Uno drove the leg servos, and a Raspberry Pi handled higher level compute. A variable DC power supply powered the servos separately from the logic.
 - This wiring scheme became the baseline for my capstone project's electrical design.

@@ -32,14 +32,14 @@ I used concepts from EAS 3101 Fundamentals of Aerodynamics to guide the design.
 Project role: **Lead CAD Designer**. I modeled the car after an inverted airfoil.
 </div>
 
-<div class="img-text-row" markdown="1">
+<div class="img-text-row" markdown="1" data-toc-sub="Airfoil selection">
 <img src="/assets/img/projects/airfoil-inspired-car/original_foil_graphed.jpg" alt="SD7062 airfoil profile plotted" style="width: 500px;">
 - I chose the SD7062 foil because it's optimized for low Reynolds number flow, which gives a high lift coefficient even at the chamber's low airspeeds.
 - Its thicker cambered body was also needed so the 3D print's cavity could hold enough sand to meet the weight requirement.
 - I pitched it at -4 degrees based on the foil's drag polars, shown below.
 </div>
 
-<div class="img-text-row" markdown="1">
+<div class="img-text-row" markdown="1" data-toc-sub="Drag polars">
 <div class="img-pair">
 <img src="/assets/img/projects/airfoil-inspired-car/drag_polars_1.jpg" alt="SD7062 drag polar plots, Cl vs Cd and Cl vs alpha" style="width: 500px;">
 <img src="/assets/img/projects/airfoil-inspired-car/drag_polars_2.jpg" alt="SD7062 drag polar plots, Cl/Cd vs alpha and Cd vs alpha" style="width: 500px;">
@@ -48,7 +48,7 @@ Project role: **Lead CAD Designer**. I modeled the car after an inverted airfoil
 - The Cl/Cd vs alpha graph peaks at 4 degrees AOA for low Reynolds number flow, and efficiency improves at higher Reynolds numbers.
 </div>
 
-<div class="img-text-row" markdown="1">
+<div class="img-text-row" markdown="1" data-toc-sub="CAD and 3D printing">
 <div class="img-pair">
 <img src="/assets/img/projects/airfoil-inspired-car/3d_base_foil.jpg" alt="3D-printed airfoil base shape" style="width: 250px;">
 <img src="/assets/img/projects/airfoil-inspired-car/full_car_iso.jpg" alt="Completed airfoil-inspired car, isometric view" style="width: 250px;">

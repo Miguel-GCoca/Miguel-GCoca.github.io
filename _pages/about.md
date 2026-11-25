@@ -1,6 +1,7 @@
 ---
 permalink: /about/
 title: "About"
+toc: true
 ---
 
 <div class="section-header" markdown="1">

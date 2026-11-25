@@ -50,7 +50,7 @@ Project role: **Systems Integrator**. I was responsible for bringing the separat
 **Experimental application**
 </div>
 
-<div class="img-text-row" markdown="1">
+<div class="img-text-row" markdown="1" data-toc-sub="Tank test setup">
 <div class="img-pair">
 <img src="/assets/img/projects/dynamic-swept-wing/tank_diagram.jpg" alt="Diagram of the wing rig mounted in the water tank" style="width: 300px;">
 <video class="lazy-video" loop muted playsinline preload="none" style="width: 400px;">
@@ -61,7 +61,7 @@ Project role: **Systems Integrator**. I was responsible for bringing the separat
 - A laser sheet and camera positioned along the tank enable Particle Image Velocimetry (PIV), which tracks seeded flow around the wing as span and sweep change.
 </div>
 
-<div class="img-text-row" markdown="1">
+<div class="img-text-row" markdown="1" data-toc-sub="PIV footage">
 <video class="lazy-video" loop muted playsinline preload="none" style="width: 500px;">
 <source src="/assets/video/tank_flow_results.mp4" type="video/mp4">
 </video>

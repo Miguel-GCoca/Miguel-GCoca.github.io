@@ -1,14 +1,19 @@
 // Project pages: swap the sidebar bio for a table of contents built from
 // the page's own section headers (.section-header boxes and ## headings).
+// A block with data-toc-sub="Label" (usually an .img-text-row) adds an
+// indented sub-entry under the header before it, for sections that cover
+// several topics without a visible header for each.
 // The bio stays in the HTML, so without JavaScript the sidebar looks the
-// same as on every other page. Loaded only on project pages (main.html).
+// same as on every other page. Loaded on project pages and on pages with
+// `toc: true` in their front matter (main.html).
 document.addEventListener('DOMContentLoaded', function () {
   var toc = document.querySelector('.page-toc');
   var list = toc && toc.querySelector('.page-toc__list');
   var content = document.querySelector('.content-box');
   if (!list || !content) return;
 
-  var headers = content.querySelectorAll('.section-header, h2');
+  var headers = content.querySelectorAll('.section-header, h2, [data-toc-sub]');
+  var overview = toc.dataset.overview !== 'false';
   var used = {};
   var items = [];
 
@@ -22,7 +27,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   headers.forEach(function (el, i) {
     var label;
-    if (i === 0 && el.classList.contains('section-header')) {
+    var sub = !!el.dataset.tocSub;
+    if (sub) {
+      label = el.dataset.tocSub;
+    } else if (el.dataset.tocLabel) {
+      // Explicit short label: <div class="section-header" data-toc-label="...">
+      label = el.dataset.tocLabel;
+    } else if (i === 0 && overview && el.classList.contains('section-header')) {
       // The first box is the "Course. Completed Month Year" line.
       label = 'Overview';
     } else {
@@ -36,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
     link.href = '#' + el.id;
     link.textContent = label;
     var li = document.createElement('li');
+    if (sub) li.className = 'page-toc__sub';
     li.appendChild(link);
     list.appendChild(li);
     items.push({ target: el, link: link });

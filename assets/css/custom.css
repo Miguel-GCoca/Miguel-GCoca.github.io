@@ -69,23 +69,35 @@
 .page-toc__list a {
   display: block;
   margin-left: -2px;
-  padding: 5px 0 5px 12px;
+  padding: 5px 6px 5px 12px;
   border-left: 2px solid transparent;
-  color: #515151;
+  border-radius: 0 4px 4px 0;
+  color: #263959;
   font-size: 15px;
   line-height: 1.35;
-  text-decoration: none;
-  transition: color 0.2s, border-color 0.2s;
+  /* Underlined in the accent navy so entries read as links, not a list of
+     plain text; the underline firms up on hover. */
+  text-decoration: underline;
+  text-decoration-color: rgba(38, 57, 89, 0.35);
+  text-underline-offset: 3px;
+  transition: background-color 0.2s, text-decoration-color 0.2s, border-color 0.2s;
 }
 
-.page-toc__list a:hover {
-  color: #263959;
+.page-toc__list a:hover,
+.page-toc__list a:focus-visible {
+  background-color: #eef1f6;
+  text-decoration-color: #263959;
 }
 
 .page-toc__list a[aria-current] {
-  color: #263959;
   border-left-color: #263959;
   font-weight: 700;
+}
+
+/* Sub-entries (data-toc-sub blocks) sit indented under their section. */
+.page-toc__list .page-toc__sub a {
+  padding-left: 26px;
+  font-size: 14px;
 }
 
 /* Desktop sidebar is a fixed full-height column: if a page ever has more
@@ -101,7 +113,8 @@
 /* Jump targets: leave a little room above the header after a TOC jump, and
    glide there unless the visitor has asked for reduced motion. */
 .content-box .section-header,
-.content-box h2 {
+.content-box h2,
+.content-box [data-toc-sub] {
   scroll-margin-top: 20px;
 }
 
