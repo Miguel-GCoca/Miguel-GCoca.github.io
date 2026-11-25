@@ -21,6 +21,96 @@
   text-align: justify;
 }
 
+/* Project pages: table of contents shown in place of the bio paragraph
+   (markup in _layouts/main.html, filled in by assets/js/page-toc.js).
+   The title copies the theme's "Contact me" heading (12px caps between two
+   rules) so the sidebar keeps one heading style. Entries hang off a thin
+   grey track; the section being read turns navy with a navy bar. */
+.page-toc[hidden] {
+  display: none; /* theme's nav { display: block } would beat [hidden] */
+}
+
+.page-toc {
+  text-align: left;
+  margin: 0 0 10px;
+}
+
+.page-toc__title {
+  position: relative;
+  color: #333030;
+  font-weight: 400;
+  font-size: 12px;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.page-toc__title::before,
+.page-toc__title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: calc(50% - 56px);
+  height: 2px;
+  transform: translateY(-50%);
+  background-color: #515151;
+}
+
+.page-toc__title::before { left: 0; }
+.page-toc__title::after { right: 0; }
+
+.page-toc__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-left: 2px solid #e3e6eb;
+}
+
+.page-toc__list a {
+  display: block;
+  margin-left: -2px;
+  padding: 5px 0 5px 12px;
+  border-left: 2px solid transparent;
+  color: #515151;
+  font-size: 15px;
+  line-height: 1.35;
+  text-decoration: none;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.page-toc__list a:hover {
+  color: #263959;
+}
+
+.page-toc__list a[aria-current] {
+  color: #263959;
+  border-left-color: #263959;
+  font-weight: 700;
+}
+
+/* Desktop sidebar is a fixed full-height column: if a page ever has more
+   sections than fit, scroll the list instead of pushing the nav and
+   contact icons off screen. */
+@media (min-width: 769px) {
+  .page-toc__list {
+    max-height: 45vh;
+    overflow-y: auto;
+  }
+}
+
+/* Jump targets: leave a little room above the header after a TOC jump, and
+   glide there unless the visitor has asked for reduced motion. */
+.content-box .section-header,
+.content-box h2 {
+  scroll-margin-top: 20px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html:has(.page-toc:not([hidden])) {
+    scroll-behavior: smooth;
+  }
+}
+
 /* Last-updated line above the copyright, styled to match the theme's own
    footer .copyright (font-size 14px, centered, no default <p> margin). */
 .last-updated p {

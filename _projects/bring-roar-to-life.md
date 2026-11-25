@@ -149,10 +149,8 @@ Project role: **Electrical Design Lead**. I selected the electronic components a
 </div>
 
 <div class="section-header" markdown="1">
-**Cost breakdown**. All of Anky's parts came to $1,171.43.
+**Cost breakdown**
 </div>
-
-3D printed structure and hobby servos kept the cost low. The Raspberry Pi and the two batteries alone make up over a third of the total.
 
 <div class="data-table" markdown="1">
 
@@ -166,5 +164,3 @@ Project role: **Electrical Design Lead**. I selected the electronic components a
 | **Total** | | **$1,171.43** |
 
 </div>
-
-Swapping the protoboard for a custom PCB would add about $200. The robot wasn't designed for mass production, and building one takes a team that knows the design well.

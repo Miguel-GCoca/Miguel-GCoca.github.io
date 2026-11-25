@@ -9,7 +9,19 @@ layout: default
         <a href="{{site.baseurl}}/"><img src="{{site.baseurl}}/assets/img/{% if site.author-img %}{{site.author-img}}{% endif %}" alt="{{site.author}}"></a>
       </div>
       <div class="author-name">{{site.author}}</div>
-      <p>{{site.about-author}}</p>
+      <p class="about-bio">{{site.about-author}}</p>
+      {% if page.collection == "projects" %}
+        {% comment %}
+          Table of contents for project pages. Starts hidden and empty;
+          assets/js/page-toc.js fills it from the page's section headers,
+          then shows it in place of the bio paragraph above.
+        {% endcomment %}
+        <nav class="page-toc" aria-label="On this page" hidden>
+          <h3 class="page-toc__title">On this page</h3>
+          <ol class="page-toc__list"></ol>
+        </nav>
+        <script src="{{ "/assets/js/page-toc.js" | prepend: site.baseurl }}" defer></script>
+      {% endif %}
     </div>
     <nav class="site-nav">
       <ul>

@@ -36,6 +36,12 @@ generic "AI slop" SaaS look, and other frontend taste conventions.
     rather than trusting a snapshot here. Update it as projects get
     finished; remove both includes entirely once nothing is left in
     progress.
+    On project pages it also renders an empty `.page-toc` nav under the
+    bio; `assets/js/page-toc.js` fills it from the page's `.section-header`
+    boxes and `##` headings (first box becomes "Overview", "Project role:
+    **X**" becomes "X") and hides the bio, highlighting the section being
+    read. Pages with fewer than 2 entries keep the bio. New sections show
+    up in the TOC automatically.
   - `_includes/head.html` — `<head>`, meta tags, favicon (points at bio-photo.jpg
     instead of the theme's default icon). Viewport meta is
     `width=device-width, initial-scale=1` — deliberately no `maximum-scale`,
