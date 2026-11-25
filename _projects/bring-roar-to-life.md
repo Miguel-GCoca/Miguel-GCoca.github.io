@@ -21,6 +21,8 @@ It's by far the most exciting project I've been part of.
 - Proportions, motion and anatomy that resemble an ankylosaurus.
 - Voice controlled teleoperation triggered by the activation phrase "Hey, Anky!"
 
+[View the code on GitHub](https://github.com/Miguel-GCoca/ankybot)
+
 <div class="section-header" markdown="1">
 Project role: **Technical Lead**. I made sure the team reached its stated goals and provided mentorship.
 </div>
@@ -129,6 +131,27 @@ Project role: **Electrical Design Lead**. I selected the electronic components a
 - The Arduino Mega hadn't arrived yet, so this test used three Arduino Unos to read joint positions.
 - The AI model had no idea what to do upside down, so it moves seemingly at random.
 </div>
+
+<div class="section-header" markdown="1">
+**Cost breakdown**. All of Anky's parts came to $1,171.43.
+</div>
+
+3D printed structure and hobby servos kept the cost low. The Raspberry Pi and the two batteries alone make up over a third of the total.
+
+<div class="data-table" markdown="1">
+
+| Category | What it covers | Cost |
+|---|---|---|
+| Power | Two LiPo batteries, charger, buck converters, fuse, power switch, capacitor, USB C pigtail | $319.93 |
+| Computing and sensing | Raspberry Pi 5, Arduino Mega, 9 DOF IMU, Wi-Fi dongle, USB microphone | $300.65 |
+| Actuation | 45 kg leg servos, 10 kg head servos, servo driver, servo extension cables | $284.73 |
+| Structure | PLA filament, 80/20 aluminum extrusion and connectors, fasteners, threaded inserts, bearings, epoxy, anti slip silicone | $218.79 |
+| Wiring | Wire, crimp terminals, heat shrink, protoboards | $47.33 |
+| **Total** | | **$1,171.43** |
+
+</div>
+
+Swapping the protoboard for a custom PCB would add about $200. The robot wasn't designed for mass production, and building one takes a team that knows the design well.
 
 <div class="section-header" markdown="1">
 Anky won the **Faculty's Choice Award** at the University of Central Florida's Summer '26 Senior Design Showcase.
